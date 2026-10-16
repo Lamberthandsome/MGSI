@@ -1,0 +1,34 @@
+{
+  "policy": {
+    "sample_seconds": 5,
+    "window_seconds": 60,
+    "consecutive_samples": 3,
+    "cooldown_seconds": 60,
+    "minimum_cells": 16,
+    "low_load": 0.2,
+    "high_load": 0.8
+  },
+  "initial_layout": {
+    "row_parts": 4,
+    "col_parts": 4
+  },
+  "protocol": "Server calibration: skew_on only, verify hot classification, migration trigger, golden verification on real GLEAM queries.",
+  "scenarios": [
+    {
+      "name": "skew_calib",
+      "clients": 16,
+      "duration_seconds": 240,
+      "policy": true,
+      "mix": {
+        "1": 0.85,
+        "2": 0.021,
+        "3": 0.021,
+        "4": 0.022,
+        "5": 0.022,
+        "6": 0.021,
+        "7": 0.021,
+        "8": 0.022
+      }
+    }
+  ]
+}

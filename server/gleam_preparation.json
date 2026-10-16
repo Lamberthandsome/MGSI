@@ -1,0 +1,2594 @@
+{
+  "status": "READY",
+  "dataset": "gleam",
+  "seconds_separate": 847.3552183670108,
+  "tiles": 640,
+  "zarr": {
+    "stores": [
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1981",
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1982",
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1983",
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1984",
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1985",
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1986",
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1987",
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1988",
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1989",
+      "/mgsi-experiments/20261007-modern-matrix/prepare_full/zarr_gleam_all_time/1990"
+    ],
+    "data_chunks": 233728,
+    "compressed_chunk_bytes": 14915899689,
+    "complete_chunk_digest_in_completion_order": "cb1d58c636a6d83863e377d4c181f2a5d71d0a1a0cca337cd928e05590a86d82",
+    "preserves_original_physical_chunks": false,
+    "source_physical_chunks_verified": 317440,
+    "logical_chunk_layout": "Full daily/hourly-24 array with source-aligned spatial tiles; Blosc/Zstd3/bitshuffle"
+  },
+  "sedona": {
+    "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time",
+    "files": [
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_456_3164_0.parquet",
+        "bytes": 5880019
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_228_1356_0.parquet",
+        "bytes": 12878995
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_0_1808_0.parquet",
+        "bytes": 8593569
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_0_1356_0.parquet",
+        "bytes": 4608500
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_0_2260_0.parquet",
+        "bytes": 12891507
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_228_3164_0.parquet",
+        "bytes": 25011747
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_456_1356_0.parquet",
+        "bytes": 19274275
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_228_904_0.parquet",
+        "bytes": 39426569
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_0_0_0.parquet",
+        "bytes": 7505406
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_456_0_0.parquet",
+        "bytes": 2521871
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_0_452_0.parquet",
+        "bytes": 14310342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_0_904_0.parquet",
+        "bytes": 10585745
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_228_2260_0.parquet",
+        "bytes": 78714036
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_456_1808_0.parquet",
+        "bytes": 47475954
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_228_452_0.parquet",
+        "bytes": 71696896
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_456_2260_0.parquet",
+        "bytes": 81161429
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_456_904_0.parquet",
+        "bytes": 29186530
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1140_2260_0.parquet",
+        "bytes": 2752202
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_912_0_0.parquet",
+        "bytes": 2654505
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_0_3164_0.parquet",
+        "bytes": 11481586
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1140_1356_0.parquet",
+        "bytes": 2483342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_0_2712_0.parquet",
+        "bytes": 17178048
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_228_1808_0.parquet",
+        "bytes": 83399726
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1140_2712_0.parquet",
+        "bytes": 20563788
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_228_0_0.parquet",
+        "bytes": 20034475
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_684_2712_0.parquet",
+        "bytes": 38128156
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1140_1808_0.parquet",
+        "bytes": 17900268
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_684_3164_0.parquet",
+        "bytes": 2534662
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_912_452_0.parquet",
+        "bytes": 2485532
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_684_0_0.parquet",
+        "bytes": 2771382
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_228_2712_0.parquet",
+        "bytes": 68555446
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1140_3164_0.parquet",
+        "bytes": 32126459
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_912_904_0.parquet",
+        "bytes": 95072171
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_456_2712_0.parquet",
+        "bytes": 80558514
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_456_452_0.parquet",
+        "bytes": 66824685
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1368_0_0.parquet",
+        "bytes": 2480012
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_684_1356_0.parquet",
+        "bytes": 25301600
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_912_1356_0.parquet",
+        "bytes": 19143315
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1368_2260_0.parquet",
+        "bytes": 2746822
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1368_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1368_904_0.parquet",
+        "bytes": 9530372
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1140_904_0.parquet",
+        "bytes": 45686743
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_684_904_0.parquet",
+        "bytes": 49030613
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1368_1356_0.parquet",
+        "bytes": 2610504
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1368_3164_0.parquet",
+        "bytes": 2679978
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1368_2712_0.parquet",
+        "bytes": 2676832
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_684_2260_0.parquet",
+        "bytes": 22125672
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_684_452_0.parquet",
+        "bytes": 11566058
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1596_1808_0.parquet",
+        "bytes": 10722898
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1596_2260_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_684_1808_0.parquet",
+        "bytes": 86006668
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1596_0_0.parquet",
+        "bytes": 2504944
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1368_1808_0.parquet",
+        "bytes": 2575342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_0_452_0.parquet",
+        "bytes": 13725601
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1140_0_0.parquet",
+        "bytes": 2497997
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_0_1808_0.parquet",
+        "bytes": 8599765
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1596_3164_0.parquet",
+        "bytes": 2537947
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_0_3164_0.parquet",
+        "bytes": 11410325
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_0_904_0.parquet",
+        "bytes": 10345258
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1596_2712_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_912_2712_0.parquet",
+        "bytes": 28697913
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1596_452_0.parquet",
+        "bytes": 2431604
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_912_2260_0.parquet",
+        "bytes": 7366209
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1140_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1596_904_0.parquet",
+        "bytes": 2538677
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_228_1356_0.parquet",
+        "bytes": 12895417
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_228_3164_0.parquet",
+        "bytes": 24862192
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_456_0_0.parquet",
+        "bytes": 2521961
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_912_1808_0.parquet",
+        "bytes": 70670975
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_1596_1356_0.parquet",
+        "bytes": 2515207
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_0_0_0.parquet",
+        "bytes": 7309945
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_228_904_0.parquet",
+        "bytes": 38408963
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_0_2712_0.parquet",
+        "bytes": 16814825
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_228_452_0.parquet",
+        "bytes": 69499212
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1981_912_3164_0.parquet",
+        "bytes": 24061352
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_684_0_0.parquet",
+        "bytes": 2771686
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_456_3164_0.parquet",
+        "bytes": 5875330
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_456_1356_0.parquet",
+        "bytes": 19612053
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_228_1808_0.parquet",
+        "bytes": 83317806
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_684_452_0.parquet",
+        "bytes": 11443515
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_912_0_0.parquet",
+        "bytes": 2654505
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_456_2260_0.parquet",
+        "bytes": 82727448
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_456_2712_0.parquet",
+        "bytes": 80372028
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_228_2260_0.parquet",
+        "bytes": 77271159
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_228_0_0.parquet",
+        "bytes": 19445622
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_0_1356_0.parquet",
+        "bytes": 4581875
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_684_2260_0.parquet",
+        "bytes": 22324522
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_684_1356_0.parquet",
+        "bytes": 24480490
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_684_3164_0.parquet",
+        "bytes": 2534662
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_912_452_0.parquet",
+        "bytes": 2485532
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1140_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1140_1356_0.parquet",
+        "bytes": 2483342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_912_2260_0.parquet",
+        "bytes": 7383013
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_912_1808_0.parquet",
+        "bytes": 72160015
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_456_1808_0.parquet",
+        "bytes": 48833076
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_684_904_0.parquet",
+        "bytes": 49101545
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1140_904_0.parquet",
+        "bytes": 45978842
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_0_2260_0.parquet",
+        "bytes": 12740548
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_684_1808_0.parquet",
+        "bytes": 87359854
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1368_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1140_0_0.parquet",
+        "bytes": 2497997
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_684_2712_0.parquet",
+        "bytes": 38077945
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_228_2712_0.parquet",
+        "bytes": 68841530
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_456_452_0.parquet",
+        "bytes": 66451752
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_912_904_0.parquet",
+        "bytes": 95903191
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_912_3164_0.parquet",
+        "bytes": 23060571
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_456_904_0.parquet",
+        "bytes": 29008201
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1596_452_0.parquet",
+        "bytes": 2431604
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1368_904_0.parquet",
+        "bytes": 9546399
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1596_2712_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1596_1808_0.parquet",
+        "bytes": 10722898
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1596_2260_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1368_1356_0.parquet",
+        "bytes": 2610495
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1596_3164_0.parquet",
+        "bytes": 2537947
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_912_1356_0.parquet",
+        "bytes": 19201636
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1596_0_0.parquet",
+        "bytes": 2504944
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1596_1356_0.parquet",
+        "bytes": 2515207
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1368_3164_0.parquet",
+        "bytes": 2679957
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1140_2260_0.parquet",
+        "bytes": 2751790
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1368_0_0.parquet",
+        "bytes": 2480012
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_0_0_0.parquet",
+        "bytes": 7358410
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1140_1808_0.parquet",
+        "bytes": 18246754
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_0_452_0.parquet",
+        "bytes": 13553419
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1368_2712_0.parquet",
+        "bytes": 2676832
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_912_2712_0.parquet",
+        "bytes": 28184559
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1368_1808_0.parquet",
+        "bytes": 2575342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_0_3164_0.parquet",
+        "bytes": 11231247
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_0_904_0.parquet",
+        "bytes": 10579648
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1368_2260_0.parquet",
+        "bytes": 2746822
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_0_2712_0.parquet",
+        "bytes": 17172344
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_456_0_0.parquet",
+        "bytes": 2521829
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_228_1356_0.parquet",
+        "bytes": 12922116
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1140_2712_0.parquet",
+        "bytes": 20885591
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1596_904_0.parquet",
+        "bytes": 2538677
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_0_1356_0.parquet",
+        "bytes": 4566880
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_228_904_0.parquet",
+        "bytes": 38947591
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_456_904_0.parquet",
+        "bytes": 29233226
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_228_0_0.parquet",
+        "bytes": 19960340
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_228_452_0.parquet",
+        "bytes": 69098568
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1982_1140_3164_0.parquet",
+        "bytes": 31125826
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_228_2260_0.parquet",
+        "bytes": 78106980
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_456_1356_0.parquet",
+        "bytes": 19467881
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_228_1808_0.parquet",
+        "bytes": 83779917
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_228_3164_0.parquet",
+        "bytes": 24828574
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_456_1808_0.parquet",
+        "bytes": 47249151
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_912_452_0.parquet",
+        "bytes": 2485532
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_684_452_0.parquet",
+        "bytes": 11413675
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_684_1356_0.parquet",
+        "bytes": 23708728
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_228_2712_0.parquet",
+        "bytes": 67794508
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_0_2260_0.parquet",
+        "bytes": 12782915
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_684_0_0.parquet",
+        "bytes": 2771442
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_0_1808_0.parquet",
+        "bytes": 8570983
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_912_2260_0.parquet",
+        "bytes": 7299172
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_684_3164_0.parquet",
+        "bytes": 2534662
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_912_0_0.parquet",
+        "bytes": 2654505
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1140_0_0.parquet",
+        "bytes": 2497997
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_912_1808_0.parquet",
+        "bytes": 71485566
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_684_1808_0.parquet",
+        "bytes": 84431111
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_456_2260_0.parquet",
+        "bytes": 80420540
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_684_2260_0.parquet",
+        "bytes": 22075083
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_684_2712_0.parquet",
+        "bytes": 38130445
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_912_1356_0.parquet",
+        "bytes": 18593411
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_456_3164_0.parquet",
+        "bytes": 5881131
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1368_1356_0.parquet",
+        "bytes": 2609584
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_456_452_0.parquet",
+        "bytes": 66490473
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1368_0_0.parquet",
+        "bytes": 2480012
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1140_2712_0.parquet",
+        "bytes": 21185964
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_912_3164_0.parquet",
+        "bytes": 23746156
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1596_0_0.parquet",
+        "bytes": 2504944
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_912_904_0.parquet",
+        "bytes": 95429634
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1596_2712_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_456_2712_0.parquet",
+        "bytes": 80220190
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1140_3164_0.parquet",
+        "bytes": 32861217
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1140_904_0.parquet",
+        "bytes": 45992805
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_684_904_0.parquet",
+        "bytes": 49076694
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1140_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1368_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1596_2260_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1596_1808_0.parquet",
+        "bytes": 10722898
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_912_2712_0.parquet",
+        "bytes": 28280122
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1368_904_0.parquet",
+        "bytes": 9618887
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1368_3164_0.parquet",
+        "bytes": 2679969
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1596_904_0.parquet",
+        "bytes": 2538677
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1140_1356_0.parquet",
+        "bytes": 2483342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1596_452_0.parquet",
+        "bytes": 2431604
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_0_452_0.parquet",
+        "bytes": 14005249
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1140_1808_0.parquet",
+        "bytes": 18288652
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_0_1356_0.parquet",
+        "bytes": 4591950
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_0_0_0.parquet",
+        "bytes": 7474855
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_228_0_0.parquet",
+        "bytes": 20185624
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1596_3164_0.parquet",
+        "bytes": 2537947
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_0_904_0.parquet",
+        "bytes": 10384398
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1368_2712_0.parquet",
+        "bytes": 2676832
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1140_2260_0.parquet",
+        "bytes": 2749083
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1596_1356_0.parquet",
+        "bytes": 2515207
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_0_2712_0.parquet",
+        "bytes": 16951032
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_456_0_0.parquet",
+        "bytes": 2528573
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_228_1356_0.parquet",
+        "bytes": 12947494
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_228_452_0.parquet",
+        "bytes": 70036543
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_0_1808_0.parquet",
+        "bytes": 8567798
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1368_1808_0.parquet",
+        "bytes": 2575342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1983_1368_2260_0.parquet",
+        "bytes": 2746822
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_228_904_0.parquet",
+        "bytes": 38786397
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_228_3164_0.parquet",
+        "bytes": 24771804
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_228_2260_0.parquet",
+        "bytes": 76649015
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_0_2260_0.parquet",
+        "bytes": 12838714
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_228_1808_0.parquet",
+        "bytes": 83030977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_456_1356_0.parquet",
+        "bytes": 19570130
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_684_0_0.parquet",
+        "bytes": 2778707
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_912_452_0.parquet",
+        "bytes": 2492366
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_228_2712_0.parquet",
+        "bytes": 67906509
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_684_2260_0.parquet",
+        "bytes": 21635290
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_0_3164_0.parquet",
+        "bytes": 11053193
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_456_3164_0.parquet",
+        "bytes": 5869990
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_912_2260_0.parquet",
+        "bytes": 7379111
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_684_452_0.parquet",
+        "bytes": 11535414
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_456_452_0.parquet",
+        "bytes": 66733507
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_912_0_0.parquet",
+        "bytes": 2661800
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_456_2712_0.parquet",
+        "bytes": 80689309
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1140_452_0.parquet",
+        "bytes": 2489804
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_684_1808_0.parquet",
+        "bytes": 83592867
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_684_904_0.parquet",
+        "bytes": 49139613
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1140_2260_0.parquet",
+        "bytes": 2759356
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_912_1356_0.parquet",
+        "bytes": 19661428
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_912_2712_0.parquet",
+        "bytes": 28272940
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1368_2260_0.parquet",
+        "bytes": 2754369
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_456_2260_0.parquet",
+        "bytes": 77055196
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_684_3164_0.parquet",
+        "bytes": 2541630
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_456_904_0.parquet",
+        "bytes": 29157000
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1368_1808_0.parquet",
+        "bytes": 2582421
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1140_1808_0.parquet",
+        "bytes": 17813921
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_912_1808_0.parquet",
+        "bytes": 71410554
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_684_1356_0.parquet",
+        "bytes": 24260044
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_456_1808_0.parquet",
+        "bytes": 47401442
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_912_904_0.parquet",
+        "bytes": 95718161
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1596_1808_0.parquet",
+        "bytes": 10752281
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1140_0_0.parquet",
+        "bytes": 2504865
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1140_1356_0.parquet",
+        "bytes": 2490170
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1368_0_0.parquet",
+        "bytes": 2486831
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_684_2712_0.parquet",
+        "bytes": 38191316
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1596_3164_0.parquet",
+        "bytes": 2544924
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1140_2712_0.parquet",
+        "bytes": 21235681
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1368_2712_0.parquet",
+        "bytes": 2684188
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_912_3164_0.parquet",
+        "bytes": 24183840
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1596_1356_0.parquet",
+        "bytes": 2522122
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_0_0_0.parquet",
+        "bytes": 7462613
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1368_3164_0.parquet",
+        "bytes": 2687398
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1140_3164_0.parquet",
+        "bytes": 33088440
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1368_1356_0.parquet",
+        "bytes": 2617059
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1596_2712_0.parquet",
+        "bytes": 10203850
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_0_452_0.parquet",
+        "bytes": 14304393
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_0_2712_0.parquet",
+        "bytes": 17114531
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_0_1356_0.parquet",
+        "bytes": 4557664
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1596_904_0.parquet",
+        "bytes": 2545656
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1140_904_0.parquet",
+        "bytes": 46481483
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1596_0_0.parquet",
+        "bytes": 2511831
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1368_452_0.parquet",
+        "bytes": 2489804
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1596_2260_0.parquet",
+        "bytes": 10203850
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_228_1356_0.parquet",
+        "bytes": 12891845
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_228_452_0.parquet",
+        "bytes": 69114917
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1368_904_0.parquet",
+        "bytes": 9586971
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_0_3164_0.parquet",
+        "bytes": 11209370
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_456_0_0.parquet",
+        "bytes": 2521911
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_228_0_0.parquet",
+        "bytes": 19660039
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_228_904_0.parquet",
+        "bytes": 38950984
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_0_2260_0.parquet",
+        "bytes": 12840439
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1984_1596_452_0.parquet",
+        "bytes": 2438291
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_228_2260_0.parquet",
+        "bytes": 76741793
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_456_3164_0.parquet",
+        "bytes": 5889755
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_0_904_0.parquet",
+        "bytes": 10763838
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_228_2712_0.parquet",
+        "bytes": 69885631
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_228_3164_0.parquet",
+        "bytes": 24899884
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_228_1808_0.parquet",
+        "bytes": 80943336
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_912_0_0.parquet",
+        "bytes": 2654505
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_684_904_0.parquet",
+        "bytes": 49039876
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_456_904_0.parquet",
+        "bytes": 29073391
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_456_452_0.parquet",
+        "bytes": 66522246
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_456_2260_0.parquet",
+        "bytes": 78163957
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_0_1808_0.parquet",
+        "bytes": 8583631
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_684_1356_0.parquet",
+        "bytes": 25129723
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_684_0_0.parquet",
+        "bytes": 2771248
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_912_452_0.parquet",
+        "bytes": 2485532
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_456_2712_0.parquet",
+        "bytes": 80367024
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1140_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_684_2260_0.parquet",
+        "bytes": 21885331
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_684_3164_0.parquet",
+        "bytes": 2534662
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_684_452_0.parquet",
+        "bytes": 11589638
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_912_2260_0.parquet",
+        "bytes": 7347213
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_912_1808_0.parquet",
+        "bytes": 71209393
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_456_1356_0.parquet",
+        "bytes": 20006685
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_684_2712_0.parquet",
+        "bytes": 38138420
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1368_904_0.parquet",
+        "bytes": 9454751
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_912_1356_0.parquet",
+        "bytes": 20051816
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_912_904_0.parquet",
+        "bytes": 95075934
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_684_1808_0.parquet",
+        "bytes": 87526776
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1140_2260_0.parquet",
+        "bytes": 2749963
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1368_1356_0.parquet",
+        "bytes": 2610473
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_456_1808_0.parquet",
+        "bytes": 48197916
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1140_1356_0.parquet",
+        "bytes": 2483342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_912_3164_0.parquet",
+        "bytes": 23582169
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1140_0_0.parquet",
+        "bytes": 2497997
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_912_2712_0.parquet",
+        "bytes": 26795582
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1596_452_0.parquet",
+        "bytes": 2431604
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1596_2712_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1596_1808_0.parquet",
+        "bytes": 10722898
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1596_0_0.parquet",
+        "bytes": 2504944
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1140_1808_0.parquet",
+        "bytes": 18239582
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1368_2712_0.parquet",
+        "bytes": 2676832
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1140_904_0.parquet",
+        "bytes": 46015912
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1368_0_0.parquet",
+        "bytes": 2480012
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1140_2712_0.parquet",
+        "bytes": 19324818
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1596_1356_0.parquet",
+        "bytes": 2515207
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1368_2260_0.parquet",
+        "bytes": 2746822
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1596_904_0.parquet",
+        "bytes": 2538677
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_0_3164_0.parquet",
+        "bytes": 10926377
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_0_452_0.parquet",
+        "bytes": 13563438
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1368_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1368_3164_0.parquet",
+        "bytes": 2679879
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_0_0_0.parquet",
+        "bytes": 7382217
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_0_2260_0.parquet",
+        "bytes": 12478638
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1596_2260_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1140_3164_0.parquet",
+        "bytes": 32043020
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_0_904_0.parquet",
+        "bytes": 10417267
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1368_1808_0.parquet",
+        "bytes": 2575342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1985_1596_3164_0.parquet",
+        "bytes": 2537947
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_228_3164_0.parquet",
+        "bytes": 24794037
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_0_1356_0.parquet",
+        "bytes": 4575512
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_228_1356_0.parquet",
+        "bytes": 12903794
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_456_0_0.parquet",
+        "bytes": 2521717
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_0_1808_0.parquet",
+        "bytes": 8700719
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_228_904_0.parquet",
+        "bytes": 38906611
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_684_0_0.parquet",
+        "bytes": 2771383
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_684_1356_0.parquet",
+        "bytes": 24681366
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_228_1808_0.parquet",
+        "bytes": 83306051
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_456_1356_0.parquet",
+        "bytes": 20314113
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_228_452_0.parquet",
+        "bytes": 70238904
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_456_3164_0.parquet",
+        "bytes": 5869955
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_684_3164_0.parquet",
+        "bytes": 2534662
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_456_904_0.parquet",
+        "bytes": 29186614
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_456_2260_0.parquet",
+        "bytes": 80616656
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_912_0_0.parquet",
+        "bytes": 2654505
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_684_904_0.parquet",
+        "bytes": 49091964
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_0_2712_0.parquet",
+        "bytes": 17020684
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_912_1356_0.parquet",
+        "bytes": 19910014
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_684_452_0.parquet",
+        "bytes": 11489497
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_684_2260_0.parquet",
+        "bytes": 22429190
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_228_2712_0.parquet",
+        "bytes": 70393043
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_456_1808_0.parquet",
+        "bytes": 49474364
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_456_2712_0.parquet",
+        "bytes": 81436276
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_228_0_0.parquet",
+        "bytes": 20377941
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_228_2260_0.parquet",
+        "bytes": 77579612
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1140_1356_0.parquet",
+        "bytes": 2483342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_912_452_0.parquet",
+        "bytes": 2485532
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1140_2712_0.parquet",
+        "bytes": 19676228
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1368_2260_0.parquet",
+        "bytes": 2746822
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1140_904_0.parquet",
+        "bytes": 45789817
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_456_452_0.parquet",
+        "bytes": 67659936
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1368_904_0.parquet",
+        "bytes": 9557945
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_684_1808_0.parquet",
+        "bytes": 86213617
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_912_1808_0.parquet",
+        "bytes": 72498619
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1368_3164_0.parquet",
+        "bytes": 2679956
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1140_0_0.parquet",
+        "bytes": 2497997
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1596_0_0.parquet",
+        "bytes": 2504944
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_912_904_0.parquet",
+        "bytes": 96064797
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_912_3164_0.parquet",
+        "bytes": 23850098
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1140_3164_0.parquet",
+        "bytes": 31660812
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_684_2712_0.parquet",
+        "bytes": 38135175
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1596_2712_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1368_1808_0.parquet",
+        "bytes": 2575342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1368_0_0.parquet",
+        "bytes": 2480012
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1596_2260_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1596_1356_0.parquet",
+        "bytes": 2515207
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1140_2260_0.parquet",
+        "bytes": 2751966
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1596_1808_0.parquet",
+        "bytes": 10722898
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1368_1356_0.parquet",
+        "bytes": 2608961
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_0_452_0.parquet",
+        "bytes": 14081829
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1596_452_0.parquet",
+        "bytes": 2431604
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_0_0_0.parquet",
+        "bytes": 7398165
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1368_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_0_1808_0.parquet",
+        "bytes": 8681793
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_912_2712_0.parquet",
+        "bytes": 27364672
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_912_2260_0.parquet",
+        "bytes": 7365574
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1140_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1596_904_0.parquet",
+        "bytes": 2538677
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1368_2712_0.parquet",
+        "bytes": 2676832
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_0_3164_0.parquet",
+        "bytes": 11184897
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_0_1356_0.parquet",
+        "bytes": 4540711
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_0_2260_0.parquet",
+        "bytes": 12876405
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_0_904_0.parquet",
+        "bytes": 10688438
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_228_3164_0.parquet",
+        "bytes": 24475994
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1596_3164_0.parquet",
+        "bytes": 2537947
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_456_0_0.parquet",
+        "bytes": 2521800
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1986_1140_1808_0.parquet",
+        "bytes": 18453696
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_456_3164_0.parquet",
+        "bytes": 5870913
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_684_0_0.parquet",
+        "bytes": 2771547
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_456_1356_0.parquet",
+        "bytes": 20077322
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_456_904_0.parquet",
+        "bytes": 29242657
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_228_1356_0.parquet",
+        "bytes": 12896341
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_684_1356_0.parquet",
+        "bytes": 24499122
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_456_452_0.parquet",
+        "bytes": 67522125
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_228_0_0.parquet",
+        "bytes": 20102287
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_228_452_0.parquet",
+        "bytes": 70814041
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_684_3164_0.parquet",
+        "bytes": 2534662
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_684_2260_0.parquet",
+        "bytes": 22580735
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_684_904_0.parquet",
+        "bytes": 49131617
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_228_1808_0.parquet",
+        "bytes": 81376619
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1140_0_0.parquet",
+        "bytes": 2497997
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_0_2712_0.parquet",
+        "bytes": 17100642
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_684_1808_0.parquet",
+        "bytes": 85132637
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_456_2260_0.parquet",
+        "bytes": 80101365
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1140_1356_0.parquet",
+        "bytes": 2483342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_684_452_0.parquet",
+        "bytes": 11604796
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_456_2712_0.parquet",
+        "bytes": 80952530
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_912_1356_0.parquet",
+        "bytes": 19251759
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_228_904_0.parquet",
+        "bytes": 39012764
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_912_452_0.parquet",
+        "bytes": 2485532
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_912_3164_0.parquet",
+        "bytes": 24092918
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_228_2260_0.parquet",
+        "bytes": 75318245
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_228_2712_0.parquet",
+        "bytes": 67888689
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_684_2712_0.parquet",
+        "bytes": 38180019
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_912_2260_0.parquet",
+        "bytes": 7315000
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1368_2260_0.parquet",
+        "bytes": 2746822
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1368_1356_0.parquet",
+        "bytes": 2607718
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_912_904_0.parquet",
+        "bytes": 95488409
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1368_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1596_452_0.parquet",
+        "bytes": 2431604
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1140_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1140_3164_0.parquet",
+        "bytes": 33063189
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1368_904_0.parquet",
+        "bytes": 9626786
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_912_0_0.parquet",
+        "bytes": 2654505
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1596_904_0.parquet",
+        "bytes": 2538677
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_456_1808_0.parquet",
+        "bytes": 48325239
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1368_1808_0.parquet",
+        "bytes": 2575342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1596_1808_0.parquet",
+        "bytes": 10722898
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1596_1356_0.parquet",
+        "bytes": 2515207
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_912_2712_0.parquet",
+        "bytes": 28293078
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1368_0_0.parquet",
+        "bytes": 2480012
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1596_3164_0.parquet",
+        "bytes": 2537947
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_0_1356_0.parquet",
+        "bytes": 4577000
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1368_3164_0.parquet",
+        "bytes": 2679996
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1368_2712_0.parquet",
+        "bytes": 2676832
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_0_904_0.parquet",
+        "bytes": 10666551
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1596_2260_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_0_1808_0.parquet",
+        "bytes": 8559207
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1140_1808_0.parquet",
+        "bytes": 18578117
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_912_1808_0.parquet",
+        "bytes": 71771369
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1596_2712_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1140_2260_0.parquet",
+        "bytes": 2750852
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_228_0_0.parquet",
+        "bytes": 20016537
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_0_2712_0.parquet",
+        "bytes": 17247693
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1140_2712_0.parquet",
+        "bytes": 20878064
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_456_0_0.parquet",
+        "bytes": 2528745
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_0_452_0.parquet",
+        "bytes": 13968834
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1140_904_0.parquet",
+        "bytes": 46039316
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_228_904_0.parquet",
+        "bytes": 38385353
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_228_452_0.parquet",
+        "bytes": 69696453
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1987_1596_0_0.parquet",
+        "bytes": 2504944
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_456_3164_0.parquet",
+        "bytes": 5845831
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_684_0_0.parquet",
+        "bytes": 2778895
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_228_1356_0.parquet",
+        "bytes": 12932700
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_0_0_0.parquet",
+        "bytes": 7473958
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_228_2260_0.parquet",
+        "bytes": 76058575
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_684_452_0.parquet",
+        "bytes": 11474169
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_912_452_0.parquet",
+        "bytes": 2492366
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_456_1808_0.parquet",
+        "bytes": 47510665
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_684_1356_0.parquet",
+        "bytes": 24864559
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_0_2260_0.parquet",
+        "bytes": 12800482
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_456_1356_0.parquet",
+        "bytes": 19765656
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_456_2712_0.parquet",
+        "bytes": 80821517
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_228_3164_0.parquet",
+        "bytes": 25025318
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_0_3164_0.parquet",
+        "bytes": 11303087
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_456_2260_0.parquet",
+        "bytes": 79948119
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_228_1808_0.parquet",
+        "bytes": 79454389
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_684_1808_0.parquet",
+        "bytes": 87729927
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1140_1356_0.parquet",
+        "bytes": 2490170
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_684_2260_0.parquet",
+        "bytes": 22632435
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_684_2712_0.parquet",
+        "bytes": 38280019
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1368_452_0.parquet",
+        "bytes": 2489804
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_684_904_0.parquet",
+        "bytes": 49141951
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_912_0_0.parquet",
+        "bytes": 2661800
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_228_2712_0.parquet",
+        "bytes": 68302069
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1368_1356_0.parquet",
+        "bytes": 2615864
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_912_3164_0.parquet",
+        "bytes": 23880098
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_456_904_0.parquet",
+        "bytes": 29250972
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_912_2260_0.parquet",
+        "bytes": 7323493
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_684_3164_0.parquet",
+        "bytes": 2541630
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1140_452_0.parquet",
+        "bytes": 2489804
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1140_2712_0.parquet",
+        "bytes": 21544536
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1140_2260_0.parquet",
+        "bytes": 2756693
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1140_0_0.parquet",
+        "bytes": 2504865
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1368_0_0.parquet",
+        "bytes": 2486831
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_912_904_0.parquet",
+        "bytes": 93805195
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_912_2712_0.parquet",
+        "bytes": 29389343
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_456_452_0.parquet",
+        "bytes": 66606669
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1596_904_0.parquet",
+        "bytes": 2545656
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_912_1356_0.parquet",
+        "bytes": 19695677
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1368_2712_0.parquet",
+        "bytes": 2684188
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1596_3164_0.parquet",
+        "bytes": 2544924
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1368_1808_0.parquet",
+        "bytes": 2582421
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1596_2712_0.parquet",
+        "bytes": 10203850
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1368_3164_0.parquet",
+        "bytes": 2687363
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1140_904_0.parquet",
+        "bytes": 45437289
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1596_452_0.parquet",
+        "bytes": 2438291
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_0_0_0.parquet",
+        "bytes": 7590750
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1140_1808_0.parquet",
+        "bytes": 19677783
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1596_1356_0.parquet",
+        "bytes": 2522122
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_0_3164_0.parquet",
+        "bytes": 11075027
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_912_1808_0.parquet",
+        "bytes": 73522237
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_0_452_0.parquet",
+        "bytes": 13643188
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1596_2260_0.parquet",
+        "bytes": 10203850
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_0_1808_0.parquet",
+        "bytes": 8551616
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_0_1356_0.parquet",
+        "bytes": 4528370
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_0_904_0.parquet",
+        "bytes": 10295120
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1596_0_0.parquet",
+        "bytes": 2511831
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1368_904_0.parquet",
+        "bytes": 9602846
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1140_3164_0.parquet",
+        "bytes": 32721103
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_228_452_0.parquet",
+        "bytes": 67999043
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_228_904_0.parquet",
+        "bytes": 36755642
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1368_2260_0.parquet",
+        "bytes": 2754369
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_456_3164_0.parquet",
+        "bytes": 5863669
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_456_452_0.parquet",
+        "bytes": 65519987
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1988_1596_1808_0.parquet",
+        "bytes": 10752281
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_0_2260_0.parquet",
+        "bytes": 12690663
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_228_1356_0.parquet",
+        "bytes": 12878600
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_456_1808_0.parquet",
+        "bytes": 48260223
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_456_904_0.parquet",
+        "bytes": 28908328
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_228_2712_0.parquet",
+        "bytes": 68144926
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_228_2260_0.parquet",
+        "bytes": 75213625
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_228_1808_0.parquet",
+        "bytes": 82687958
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_228_0_0.parquet",
+        "bytes": 20253452
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_228_3164_0.parquet",
+        "bytes": 24389712
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_684_1356_0.parquet",
+        "bytes": 25259671
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_684_0_0.parquet",
+        "bytes": 2771403
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_456_2712_0.parquet",
+        "bytes": 80674480
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_684_452_0.parquet",
+        "bytes": 11433255
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_0_2712_0.parquet",
+        "bytes": 16297706
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_684_1808_0.parquet",
+        "bytes": 87569902
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_912_452_0.parquet",
+        "bytes": 2485532
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_456_0_0.parquet",
+        "bytes": 2521701
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_684_904_0.parquet",
+        "bytes": 49047104
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_912_0_0.parquet",
+        "bytes": 2654505
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1140_1808_0.parquet",
+        "bytes": 19193152
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_684_2712_0.parquet",
+        "bytes": 38149615
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1140_2260_0.parquet",
+        "bytes": 2749716
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_912_2260_0.parquet",
+        "bytes": 7351187
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_912_1356_0.parquet",
+        "bytes": 19997299
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_912_3164_0.parquet",
+        "bytes": 24510095
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_456_1356_0.parquet",
+        "bytes": 20229815
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1140_1356_0.parquet",
+        "bytes": 2483342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1368_0_0.parquet",
+        "bytes": 2480012
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1140_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_684_3164_0.parquet",
+        "bytes": 2534662
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_912_2712_0.parquet",
+        "bytes": 29419539
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1596_0_0.parquet",
+        "bytes": 2504944
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_912_1808_0.parquet",
+        "bytes": 72362749
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1140_904_0.parquet",
+        "bytes": 45805695
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_456_2260_0.parquet",
+        "bytes": 79009262
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_684_2260_0.parquet",
+        "bytes": 22382565
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1140_0_0.parquet",
+        "bytes": 2497997
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1140_2712_0.parquet",
+        "bytes": 21815110
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1368_1808_0.parquet",
+        "bytes": 2575342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1368_3164_0.parquet",
+        "bytes": 2679992
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1140_3164_0.parquet",
+        "bytes": 33190603
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1368_2260_0.parquet",
+        "bytes": 2746822
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_912_904_0.parquet",
+        "bytes": 96114078
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_0_0_0.parquet",
+        "bytes": 7596495
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1596_3164_0.parquet",
+        "bytes": 2537947
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_0_1356_0.parquet",
+        "bytes": 4553021
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1596_1808_0.parquet",
+        "bytes": 10722898
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1368_1356_0.parquet",
+        "bytes": 2607476
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1596_2260_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1596_904_0.parquet",
+        "bytes": 2538677
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_0_452_0.parquet",
+        "bytes": 13687690
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1596_2712_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_0_1808_0.parquet",
+        "bytes": 8667201
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_0_2260_0.parquet",
+        "bytes": 12627881
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1368_904_0.parquet",
+        "bytes": 9617111
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_0_904_0.parquet",
+        "bytes": 10291333
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1596_452_0.parquet",
+        "bytes": 2431604
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_228_1356_0.parquet",
+        "bytes": 12893366
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_228_0_0.parquet",
+        "bytes": 20304464
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1368_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_228_452_0.parquet",
+        "bytes": 69609411
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1368_2712_0.parquet",
+        "bytes": 2676832
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1989_1596_1356_0.parquet",
+        "bytes": 2515207
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_228_3164_0.parquet",
+        "bytes": 24368214
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_684_0_0.parquet",
+        "bytes": 2771224
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_0_2712_0.parquet",
+        "bytes": 17061436
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_0_3164_0.parquet",
+        "bytes": 11134869
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_456_904_0.parquet",
+        "bytes": 29193721
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_228_2260_0.parquet",
+        "bytes": 75831058
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_456_0_0.parquet",
+        "bytes": 2521821
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_228_2712_0.parquet",
+        "bytes": 70611767
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_456_452_0.parquet",
+        "bytes": 67118790
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_228_1808_0.parquet",
+        "bytes": 83822411
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_912_0_0.parquet",
+        "bytes": 2654505
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_684_3164_0.parquet",
+        "bytes": 2534662
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_684_452_0.parquet",
+        "bytes": 11593965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_684_1356_0.parquet",
+        "bytes": 24382676
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_684_904_0.parquet",
+        "bytes": 49085985
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_228_904_0.parquet",
+        "bytes": 37778782
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_456_3164_0.parquet",
+        "bytes": 5867195
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_912_452_0.parquet",
+        "bytes": 2485532
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1140_0_0.parquet",
+        "bytes": 2497997
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_456_1808_0.parquet",
+        "bytes": 46554188
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_456_1356_0.parquet",
+        "bytes": 19968023
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_912_1356_0.parquet",
+        "bytes": 19640037
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1140_1356_0.parquet",
+        "bytes": 2483342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1368_1356_0.parquet",
+        "bytes": 2609394
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_912_3164_0.parquet",
+        "bytes": 23661428
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_456_2260_0.parquet",
+        "bytes": 79179395
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_456_2712_0.parquet",
+        "bytes": 80296717
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_912_2260_0.parquet",
+        "bytes": 7287999
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1368_1808_0.parquet",
+        "bytes": 2575342
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1140_904_0.parquet",
+        "bytes": 45740792
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_684_2260_0.parquet",
+        "bytes": 22587620
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1368_2712_0.parquet",
+        "bytes": 2676832
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1140_2260_0.parquet",
+        "bytes": 2749655
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1596_2712_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_912_2712_0.parquet",
+        "bytes": 27509640
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_912_1808_0.parquet",
+        "bytes": 72425663
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1140_3164_0.parquet",
+        "bytes": 32313324
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1596_2260_0.parquet",
+        "bytes": 10175965
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_684_2712_0.parquet",
+        "bytes": 38235319
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_684_1808_0.parquet",
+        "bytes": 84623814
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1140_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_912_904_0.parquet",
+        "bytes": 95973917
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1596_1356_0.parquet",
+        "bytes": 2515207
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1368_452_0.parquet",
+        "bytes": 2482977
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1596_452_0.parquet",
+        "bytes": 2431604
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1596_0_0.parquet",
+        "bytes": 2504944
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1368_3164_0.parquet",
+        "bytes": 2680009
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1368_904_0.parquet",
+        "bytes": 9595873
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1140_1808_0.parquet",
+        "bytes": 18890233
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1368_0_0.parquet",
+        "bytes": 2480012
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1596_3164_0.parquet",
+        "bytes": 2537947
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1368_2260_0.parquet",
+        "bytes": 2746822
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1596_904_0.parquet",
+        "bytes": 2538677
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1140_2712_0.parquet",
+        "bytes": 21207068
+      },
+      {
+        "path": "/mgsi-experiments/20261007-modern-matrix/prepare_full/sedona_gleam_all_time/1990_1596_1808_0.parquet",
+        "bytes": 10722898
+      }
+    ],
+    "bytes": 15004547579,
+    "rows": 233728
+  },
+  "validation": "All chunk values reconstructed; HDF5 interior/edge samples exact; Zarr codec samples exact; selected-day GeoTIFF roundtrip exact; original-coordinate 960 monthly aggregates checked."
+}

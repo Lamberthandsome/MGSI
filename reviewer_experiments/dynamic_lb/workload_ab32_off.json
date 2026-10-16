@@ -1,0 +1,29 @@
+{
+  "policy": {
+    "sample_seconds": 5,
+    "window_seconds": 60,
+    "consecutive_samples": 3,
+    "cooldown_seconds": 60,
+    "minimum_cells": 16,
+    "low_load": 0.2,
+    "high_load": 0.8,
+    "drain_timeout_seconds": 300
+  },
+  "initial_layout": {
+    "row_parts": 4,
+    "col_parts": 5
+  },
+  "protocol": "High-pressure A/B leg 1: 32 clients, policy OFF.",
+  "scenarios": [
+    {
+      "name": "ab32_off",
+      "clients": 32,
+      "duration_seconds": 600,
+      "policy": false,
+      "mix": {
+        "1": 0.95,
+        "2": 0.05
+      }
+    }
+  ]
+}

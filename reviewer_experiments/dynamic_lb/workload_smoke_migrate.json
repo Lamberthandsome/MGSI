@@ -1,0 +1,32 @@
+{
+  "policy": {
+    "sample_seconds": 1,
+    "window_seconds": 4,
+    "consecutive_samples": 2,
+    "cooldown_seconds": 4,
+    "minimum_cells": 8
+  },
+  "initial_layout": {
+    "row_parts": 4,
+    "col_parts": 5
+  },
+  "protocol": "Smoke migration-forcing run: 4-cell partitions cannot split (minimum_cells=8), so a sustained hot partition must migrate.",
+  "scenarios": [
+    {
+      "name": "skew_migrate",
+      "clients": 16,
+      "duration_seconds": 60,
+      "policy": true,
+      "mix": {
+        "1": 0.9,
+        "2": 0.014,
+        "3": 0.014,
+        "4": 0.015,
+        "5": 0.015,
+        "6": 0.014,
+        "7": 0.014,
+        "8": 0.014
+      }
+    }
+  ]
+}

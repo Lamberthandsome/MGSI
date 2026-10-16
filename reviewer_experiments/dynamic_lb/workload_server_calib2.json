@@ -1,0 +1,29 @@
+{
+  "policy": {
+    "sample_seconds": 5,
+    "window_seconds": 60,
+    "consecutive_samples": 3,
+    "cooldown_seconds": 60,
+    "minimum_cells": 16,
+    "low_load": 0.2,
+    "high_load": 0.8,
+    "drain_timeout_seconds": 300
+  },
+  "initial_layout": {
+    "row_parts": 4,
+    "col_parts": 5
+  },
+  "protocol": "Calibration v2: pure-hotspot R1 stream, 20 fine partitions (5x5 tiles, cannot split at minimum_cells=16 so migration is the direct lever), drain timeout 300 s per observed 30-160 s query latencies.",
+  "scenarios": [
+    {
+      "name": "skew_pure",
+      "clients": 16,
+      "duration_seconds": 420,
+      "policy": true,
+      "mix": {
+        "1": 0.95,
+        "2": 0.05
+      }
+    }
+  ]
+}

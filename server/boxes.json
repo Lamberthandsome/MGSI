@@ -1,0 +1,50 @@
+{
+  "1": {
+    "lat_min": -45,
+    "lat_max": 0,
+    "lon_min": -90,
+    "lon_max": 90
+  },
+  "2": {
+    "lat_min": -45,
+    "lat_max": 45,
+    "lon_min": -90,
+    "lon_max": 90
+  },
+  "3": {
+    "lat_min": -45,
+    "lat_max": 90,
+    "lon_min": -90,
+    "lon_max": 90
+  },
+  "4": {
+    "lat_min": -90,
+    "lat_max": 90,
+    "lon_min": -90,
+    "lon_max": 90
+  },
+  "5": {
+    "lat_min": -90,
+    "lat_max": 45,
+    "lon_min": -180,
+    "lon_max": 120
+  },
+  "6": {
+    "lat_min": -90,
+    "lat_max": 45,
+    "lon_min": -180,
+    "lon_max": 180
+  },
+  "7": {
+    "lat_min": -90,
+    "lat_max": 90,
+    "lon_min": -180,
+    "lon_max": 120
+  },
+  "8": {
+    "lat_min": -90,
+    "lat_max": 90,
+    "lon_min": -180,
+    "lon_max": 180
+  }
+}

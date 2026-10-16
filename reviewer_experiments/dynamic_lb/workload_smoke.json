@@ -1,0 +1,23 @@
+{
+  "policy": {
+    "sample_seconds": 1,
+    "window_seconds": 4,
+    "consecutive_samples": 2,
+    "cooldown_seconds": 4,
+    "minimum_cells": 2
+  },
+  "initial_layout": {"row_parts": 4, "col_parts": 5},
+  "protocol": "Local smoke run: synthetic 8x10 lattice, fake executor with 4 simulated nodes x 12 routes, compressed policy timings; no Flink, no golden verification.",
+  "scenarios": [
+    {"name": "uniform_off", "clients": 2, "duration_seconds": 12, "policy": false,
+     "mix": {"1": 0.125, "2": 0.125, "3": 0.125, "4": 0.125, "5": 0.125, "6": 0.125, "7": 0.125, "8": 0.125}},
+    {"name": "skew_off", "clients": 2, "duration_seconds": 12, "policy": false,
+     "mix": {"1": 0.85, "2": 0.021, "3": 0.021, "4": 0.022, "5": 0.022, "6": 0.021, "7": 0.021, "8": 0.022}},
+    {"name": "skew_on", "clients": 4, "duration_seconds": 40, "policy": true,
+     "mix": {"1": 0.85, "2": 0.021, "3": 0.021, "4": 0.022, "5": 0.022, "6": 0.021, "7": 0.021, "8": 0.022}},
+    {"name": "hotshift", "clients": 4, "duration_seconds": 40, "policy": true,
+     "mix": {"1": 0.85, "2": 0.021, "3": 0.021, "4": 0.022, "5": 0.022, "6": 0.021, "7": 0.021, "8": 0.022},
+     "mix_after": {"5": 0.85, "1": 0.021, "2": 0.021, "3": 0.022, "4": 0.022, "6": 0.021, "7": 0.021, "8": 0.022},
+     "switch_at_seconds": 20}
+  ]
+}

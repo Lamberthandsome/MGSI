@@ -1,0 +1,29 @@
+{
+  "policy": {
+    "sample_seconds": 5,
+    "window_seconds": 60,
+    "consecutive_samples": 4,
+    "cooldown_seconds": 180,
+    "minimum_cells": 16,
+    "low_load": 0.2,
+    "high_load": 0.8,
+    "drain_timeout_seconds": 300
+  },
+  "initial_layout": {
+    "row_parts": 4,
+    "col_parts": 5
+  },
+  "protocol": "Steady-state A/B leg 2: identical workload, policy ON, tuned policy (cooldown 180 s, 4 consecutive samples) so actions settle early and a long action-free steady state follows.",
+  "scenarios": [
+    {
+      "name": "steady_on",
+      "clients": 16,
+      "duration_seconds": 1800,
+      "policy": true,
+      "mix": {
+        "1": 0.95,
+        "2": 0.05
+      }
+    }
+  ]
+}

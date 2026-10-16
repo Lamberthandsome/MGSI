@@ -1,0 +1,76 @@
+{
+  "policy": {
+    "sample_seconds": 5,
+    "window_seconds": 60,
+    "consecutive_samples": 3,
+    "cooldown_seconds": 60,
+    "minimum_cells": 16,
+    "low_load": 0.2,
+    "high_load": 0.8,
+    "drain_timeout_seconds": 300
+  },
+  "initial_layout": {
+    "row_parts": 4,
+    "col_parts": 5
+  },
+  "protocol": "Resident MGSI job, parallelism 48, four work nodes; GLEAM 1981-1990 physical index, ten-year spatial queries R1-R8; per-node load sampled every 5 s as in-flight route messages / node route capacity; windowed exact partition access counts; repartitioning policy per manuscript Table 2 (5 s samples, 60 s window, 3 consecutive violations, 60 s cooldown, 0.8/0.2 thresholds, single outstanding action); consistency handoff: admission barrier, drain of in-flight leases, checkpoint, atomic layout pointer publication, epoch broadcast with JVM cache invalidation via clear_epoch, all-route confirmation, reopen under cooldown; shared HDFS payloads are not copied on migration, migration cost counts serialized layout/counter state bytes plus observed checkpoint time; every query verified against the archived golden monthly results.",
+  "scenarios": [
+    {
+      "name": "uniform_off",
+      "clients": 4,
+      "duration_seconds": 300,
+      "policy": false,
+      "mix": {
+        "1": 0.125,
+        "2": 0.125,
+        "3": 0.125,
+        "4": 0.125,
+        "5": 0.125,
+        "6": 0.125,
+        "7": 0.125,
+        "8": 0.125
+      }
+    },
+    {
+      "name": "skew_off",
+      "clients": 4,
+      "duration_seconds": 300,
+      "policy": false,
+      "mix": {
+        "1": 0.85,
+        "2": 0.021,
+        "3": 0.021,
+        "4": 0.022,
+        "5": 0.022,
+        "6": 0.021,
+        "7": 0.021,
+        "8": 0.022
+      }
+    },
+    {
+      "name": "skew_on",
+      "clients": 16,
+      "duration_seconds": 600,
+      "policy": true,
+      "mix": {
+        "1": 0.95,
+        "2": 0.05
+      }
+    },
+    {
+      "name": "hotshift",
+      "clients": 16,
+      "duration_seconds": 600,
+      "policy": true,
+      "mix": {
+        "1": 0.95,
+        "2": 0.05
+      },
+      "mix_after": {
+        "5": 0.95,
+        "2": 0.05
+      },
+      "switch_at_seconds": 300
+    }
+  ]
+}
