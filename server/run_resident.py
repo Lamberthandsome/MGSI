@@ -70,21 +70,21 @@ class Connections:
     def results(self, query_id):
         rows = {}
         deadline = time.monotonic() + 600
-        while len(rows) < 48:
+        while len(rows) < 72:
             event = self.events.get(timeout=max(1, deadline-time.monotonic()))
             if event['type'] in ('source', 'worker_ready'):
                 continue
             assert event['type'] == 'result', event
             assert event['query_id'] == query_id and event['route'] not in rows, event
             rows[event['route']] = event
-        return [rows[i] for i in range(48)]
+        return [rows[i] for i in range(72)]
 
 
 def locality_assignment(meta, connections):
     groups=defaultdict(list)
     for route,info in connections.workers.items():
         groups[(info['host'],info['jvm'])].append(route)
-    assert len(groups)==16 and all(len(v)==3 for v in groups.values())
+    assert len(groups)==24 and all(len(v)==3 for v in groups.values())
     spatial=defaultdict(list)
     for entry in meta['entries']:
         spatial[(entry['file_id'],entry['rows'][0]//450,entry['cols'][0]//720)].append(entry)
@@ -130,7 +130,7 @@ def locality_assignment(meta, connections):
 
 def main():
     overview=get('/overview')
-    assert overview['jobs-running'] == 0 and overview['slots-available'] == 48,overview
+    assert overview['jobs-running'] == 0 and overview['slots-available'] == 72,overview
     assert not (ROOT/'results.jsonl').exists(), 'Retain/archive previous records before a new run.'
     meta_path = ROOT / 'physical_index.with_blocks.json'
     meta = json.loads(meta_path.read_text())
@@ -147,7 +147,7 @@ def main():
                      for name in ('ResidentMGSI.java', 'resident-mgsi.jar', 'run_resident.py', 'physical_index.with_blocks.json', 'golden_results.json')},
            'scope': meta['scope'], 'cache_per_jvm_bytes': 512*1024**2,
            'global_index_implementation': 'P17/P18 adopted centroid/subtree-bound specification',
-           'protocol': 'Four workers; 16 JVMs x 3 subtasks; 48 cores; 8 GiB process configuration per JVM; resident engine with prepared metadata and indexes; one warmup plus five measured queries per R1-R8; application plane cache cleared before every query; no persisted aggregate results; OS/HDFS caches uncontrolled and disclosed; initialization and index preparation separate.'}
+           'protocol': 'Four workers; 24 JVMs x 3 subtasks; 72 parallel subtasks; 8 GiB process configuration per JVM; resident engine with prepared metadata and indexes; one warmup plus five measured queries per R1-R8; application plane cache cleared before every query; no persisted aggregate results; OS/HDFS caches uncontrolled and disclosed; initialization and index preparation separate.'}
     connections = Connections()
     (ROOT/'run_pin.json').write_text(json.dumps(pin, indent=2))
     started = time.perf_counter()
@@ -161,16 +161,16 @@ def main():
     (ROOT/'state.json').write_text(json.dumps(state, indent=2))
     try:
         deadline = time.monotonic()+240
-        while len(connections.workers) < 48 or connections.source is None:
+        while len(connections.workers) < 72 or connections.source is None:
             assert time.monotonic() < deadline, (len(connections.workers), get('/jobs/'+job_id))
             assert get('/jobs/'+job_id)['state'] not in ('FAILED', 'CANCELED', 'FINISHED')
             time.sleep(0.5)
-        connections.send([{'type':'query', 'route': route, 'query_id':'initialization_barrier', 'entries': [], 'box': [-45,0,-90,90]} for route in range(48)])
+        connections.send([{'type':'query', 'route': route, 'query_id':'initialization_barrier', 'entries': [], 'box': [-45,0,-90,90]} for route in range(72)])
         initial_rows=connections.results('initialization_barrier')
         assert all(r['prepared_header_bytes_per_jvm']==80 and r['prepared_spatial_tree_templates_per_jvm']==500 for r in initial_rows)
         ready = time.perf_counter()
         initialization = {'job_id': job_id, 'until_all_72_return_paths_ready_seconds': ready-started,
-                          'workers': connections.workers, 'header_bytes_read_in_initialization':16*80, 'spatial_templates_prepared_per_jvm':500, 'physical_index_preparation_seconds_separate': meta['preparation_seconds'],
+                          'workers': connections.workers, 'header_bytes_read_in_initialization':24*80, 'spatial_templates_prepared_per_jvm':500, 'physical_index_preparation_seconds_separate': meta['preparation_seconds'],
                           'protocol': pin['protocol']}
         (ROOT/'initialization.json').write_text(json.dumps(initialization, indent=2))
         owner_start=time.perf_counter()
@@ -178,7 +178,7 @@ def main():
         initialization['ownership_preparation_seconds']=time.perf_counter()-owner_start
         initialization['until_query_service_ready_seconds']=time.perf_counter()-started
         (ROOT/'initialization.json').write_text(json.dumps(initialization,indent=2))
-        print('RESIDENT_READY ' + json.dumps({'job_id':job_id, 'initialization_seconds':ready-started, 'workers':48}), flush=True)
+        print('RESIDENT_READY ' + json.dumps({'job_id':job_id, 'initialization_seconds':ready-started, 'workers':72}), flush=True)
         for region in range(1,9):
             box = meta['boxes'][str(region)]
             expected = golden['gleam_1981_1990_spatial_R'+str(region)]
@@ -188,12 +188,12 @@ def main():
                 selected = [int(identifier) for identifier in tree.query(
                     (box['lon_min'],box['lat_min']), (box['lon_max'],box['lat_max']))]
                 predicate = lambda e: e['lat_max']>=box['lat_min'] and e['lat_min']<=box['lat_max'] and e['lon_max']>=box['lon_min'] and e['lon_min']<=box['lon_max']
-                byroute = [[] for _ in range(48)]
+                byroute = [[] for _ in range(72)]
                 for entry_id in selected:
                     byroute[assignment[entry_id]].append(entry_id)
                 requests = [{'type':'query','route':route,'query_id':query_id,'entries':byroute[route],
                              'box':[box['lat_min'],box['lat_max'],box['lon_min'],box['lon_max']],
-                             'clear_epoch':query_id} for route in range(48)]
+                             'clear_epoch':query_id} for route in range(72)]
                 connections.send(requests)
                 rows = connections.results(query_id)
                 monthly = {}

@@ -268,11 +268,11 @@ public class ResidentMGSI {
     public static void main(String[] args)throws Exception{
         if(args[0].equals("blockmap")){blockmap(args[1],args[2]);return;}
         String host=args[0],metadata=args[2];int port=Integer.parseInt(args[1]);
-        StreamExecutionEnvironment env=StreamExecutionEnvironment.getExecutionEnvironment();env.setParallelism(48);env.setBufferTimeout(0);env.setRestartStrategy(RestartStrategies.noRestart());
+        StreamExecutionEnvironment env=StreamExecutionEnvironment.getExecutionEnvironment();env.setParallelism(72);env.setBufferTimeout(0);env.setRestartStrategy(RestartStrategies.noRestart());
         env.addSource(new RequestSource(host,port),TypeInformation.of(new TypeHint<Tuple2<Integer,String>>(){})).name("MGSI archived-query requests").setParallelism(1)
             .partitionCustom(new DirectPartition(),0)
-            .map(new NativeQuery(metadata)).name("MGSI native physical-index and cached KD query").setParallelism(48)
-            .addSink(new ResultSink(host,port)).name("MGSI complete result return").setParallelism(48);
+            .map(new NativeQuery(metadata)).name("MGSI native physical-index and cached KD query").setParallelism(72)
+            .addSink(new ResultSink(host,port)).name("MGSI complete result return").setParallelism(72);
         env.execute("MGSI matched GLEAM ten-year queries");
     }
 }

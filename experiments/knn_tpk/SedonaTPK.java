@@ -110,7 +110,7 @@ public class SedonaTPK {
                 if (Files.exists(output)) throw new IllegalStateException("Preserve earlier results: " + output);
                 JsonNode expected = mode.startsWith("temporal") ? reference.get("temporal").get(mode) : null;
                 List<Double> measured = new ArrayList<>();
-                for (int repeat = 0; repeat <= measuredLimit + 1; repeat++) {
+                for (int repeat = 0; repeat <= measuredLimit; repeat++) {
                     String label = repeat == 0 ? "warmup" : "measured";
                     reader.clear();
                     long timer = System.nanoTime();
@@ -190,7 +190,7 @@ public class SedonaTPK {
                     record.put("executed_plan", plan);
                     record.put("scope", inputs.get("scope").asText());
                     record.put("protocol", "Resident Spark/Sedona over full-time converted raster tiles; one warmup unrecorded; "
-                        + measuredLimit + " measured runs; extra measured run when relative spread exceeded 20%, median of three then reported; "
+                        + measuredLimit + " measured runs; mean and sample standard deviation of the measured runs reported; "
                         + "no persist/result cache; initialization/conversion separate; uncontrolled OS/HDFS caches; complete result return included.");
                     if (mode.startsWith("temporal")) {
                         Row row = rows.get(0);
@@ -230,19 +230,18 @@ public class SedonaTPK {
                     System.out.println("TPK_SEDONA_RUN " + dataset + " " + mode + " " + label + " seconds=" + elapsed);
                     if (!label.equals("warmup")) {
                         measured.add(elapsed);
-                        if (measured.size() >= measuredLimit) {
-                            double a = measured.get(measured.size() - 2), b = measured.get(measured.size() - 1);
-                            if (Math.abs(a - b) <= 0.20 * Math.min(a, b) || measured.size() >= measuredLimit + 1) break;
-                        }
+                        if (measured.size() >= measuredLimit) break;
                     }
                 }
                 double[] values = measured.stream().mapToDouble(Double::doubleValue).toArray();
-                Arrays.sort(values);
-                double statistic = values.length >= 3 ? values[1] : (values[0] + values[1]) / 2;
+                double mean = Arrays.stream(values).average().orElse(Double.NaN);
+                double variance = values.length > 1
+                    ? Arrays.stream(values).map(v -> (v - mean) * (v - mean)).sum() / (values.length - 1) : 0.0;
+                double sampleStd = Math.sqrt(variance);
                 Map<String, Object> summary = new LinkedHashMap<>();
                 summary.put("status", "COMPLETE"); summary.put("dataset", dataset); summary.put("mode", mode);
-                summary.put("measured_runs", measured); summary.put("reported_statistic", statistic);
-                summary.put("statistic_rule", values.length >= 3 ? "median" : "mean");
+                summary.put("measured_runs", measured); summary.put("reported_statistic", mean); summary.put("sample_std", sampleStd);
+                summary.put("statistic_rule", "mean±sample_std");
                 Files.write(root.resolve("sedona_" + mode + "_" + dataset + "_state.json"),
                     JSON.writeValueAsBytes(summary));
                 System.out.println("TPK_SEDONA_QUERY_PASS " + dataset + " " + mode + " measured=" + measured + " statistic=" + statistic);

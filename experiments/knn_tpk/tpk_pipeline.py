@@ -322,7 +322,7 @@ def sedona_phase():
                    '--conf', 'spark.driver.bindAddress=192.0.2.64',
                    '--conf', 'spark.cores.max=48', '--conf', 'spark.executor.instances=16',
                    str(ROOT / 'sedona-tpk.jar'), str(ROOT), MANIFEST_DIR[dataset], dataset,
-                   ','.join(MODES), '2', ','.join(WORKERS)]
+                   ','.join(MODES), '5', ','.join(WORKERS)]
         with (ROOT / (label + '.log')).open('a') as stream:
             subprocess.run(command, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
         mark(label)
