@@ -128,8 +128,7 @@ bash code/run.sh report/build_tables.py                    # 汇总生成表格
 - 部分链式脚本（如 `experiments/ablation_gleam/ablation_chain.sh`、动态负载均衡的
   对照脚本）按实验需要切换 16 TaskManager 布局，属该组实验的专用设置
 
-- 计时协议：每个实验 1 次预热 + 5 次正式计时，报告均值 ± 样本标准差；
-  每次计时前清空应用层缓存，已构建的索引 / 元数据可复用；初始化与索引构建
+- 计时口径说明：每次计时前清空应用层缓存，已构建的索引 / 元数据可复用；初始化与索引构建
   不计入查询延迟，单独统计（见 `experiments/scalability_index_cost/`）。
 - 托管缓存配置（`code/java/mgsi/cache/`）：8 GiB TM 进程、2 GiB 托管内存、
   512 MiB 缓存池、32 KiB 页、四槽位时每子任务 128 MiB、读取缓冲上限 16 MiB，
