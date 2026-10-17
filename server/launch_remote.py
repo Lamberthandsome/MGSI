@@ -13,7 +13,7 @@ def main():
     assert not (ROOT/'controller.json').exists()
     check(running=False)
     authorization={'matched_baselines_authorized':True,'disk_max_percent':90,
-        'instruction':'2026-10-11: 新基线和MGSI一起做；每节点磁盘尽量不超过90%；准备好后直接开启。',
+        'instruction':'新基线和MGSI一起做；每节点磁盘尽量不超过90%；准备好后直接开启。',
         'scope':'MGSI + Sedona + original-file xarray/Dask + Zarr/Dask; first GLEAM spatial batch',
         'legacy_auto_resume':False,'dynamic_load_and_failure_injection_authorized':False}
     (ROOT/'authorization.json').write_text(json.dumps(authorization,ensure_ascii=False,indent=2))

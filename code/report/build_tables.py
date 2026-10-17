@@ -1,4 +1,4 @@
-"""汇总 results/raw 的多次重复实验 → 中位数，与论文值对照，生成复现报告表。
+"""汇总 results/raw 的多次重复实验，计算中位数并与参考值对照，生成报告表。
 
 产出:
     results/tables/table7_ablation_repro.csv|.md
@@ -180,21 +180,21 @@ def build_dataset_change():
 
 
 def build_summary():
-    """趋势一致性总表：不看绝对值，看排序方向是否与论文一致。"""
+    """趋势一致性总表：不看绝对值，看排序方向是否与参考值一致。"""
     lines = ['# 复现趋势一致性总表', '',
-             '单机绝对耗时与论文集群不可直接对比；本表只比较**方法间的相对排序**是否复现。', '']
+             '单机与集群环境不同，绝对耗时不可直接对比；本表只比较**方法间的相对排序**。', '']
     # 表7 消融排序
     raw = load_raw('ablation')
     if raw is not None and 'total_ms' in raw.columns:
         med = raw.groupby('method')['total_ms'].median().sort_values()
         lines.append('## 消融（表7）——各变体耗时中位数（升序=越快）')
         lines.append('')
-        lines.append('| 变体 | 复现中位数(ms) | 论文中相对位置 |')
+        lines.append('| 变体 | 实测中位数(ms) | 参考相对位置 |')
         lines.append('|---|---|---|')
         paper_order = {
             'no_index_fullscan': '最慢（对照）',
-            'remove_logical_chunking': '论文中伤害最大(+155%)',
-            'remove_dynamic_repartitioning': '论文中第二(+100%)',
+            'remove_logical_chunking': '参考中伤害最大(+155%)',
+            'remove_dynamic_repartitioning': '参考中第二(+100%)',
             'remove_global_index': '第三',
             'remove_in_memory_index': '第四',
             'remove_local_index': '第五',
@@ -218,7 +218,7 @@ def build_summary():
             med = r8.sort_values()
         lines.append(f'## {name}——方法总耗时中位数（升序）')
         lines.append('')
-        lines.append('| 方法 | 中位数(s) | 论文中该实验的排序 |')
+        lines.append('| 方法 | 中位数(s) | 参考排序 |')
         lines.append('|---|---|---|')
         paper_rank = {'mgsi': '最快', 'flinksql': '慢于Hierarchy Index', 'spark': '慢于Flink SQL'}
         for m, v in med.items():

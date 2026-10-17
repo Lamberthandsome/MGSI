@@ -273,6 +273,6 @@ public class ResidentMGSI {
             .partitionCustom(new DirectPartition(),0)
             .map(new NativeQuery(metadata)).name("MGSI native physical-index and cached KD query").setParallelism(48)
             .addSink(new ResultSink(host,port)).name("MGSI complete result return").setParallelism(48);
-        env.execute("MGSI matched GLEAM ten-year queries 20261011");
+        env.execute("MGSI matched GLEAM ten-year queries");
     }
 }

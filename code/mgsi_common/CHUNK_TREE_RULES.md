@@ -15,7 +15,7 @@
 仅运行本地正确性检查：
 
 ```powershell
-python -B MGSI-Reproduction/code/tests/test_global_index.py
+python -B code/tests/test_global_index.py
 ```
 
 这些检查不需要Flink、SciPy、HDFS、真实栅格或服务器。完整管线仍须使用其既有依赖；此命令只验证索引规则和入口所用的索引类，不会启动实验。

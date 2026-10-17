@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parent
 
 def main():
     setup=time.perf_counter()
-    spark=SparkSession.builder.appName('MGSI-identical-ten-year-SQL-20261006').getOrCreate()
+    spark=SparkSession.builder.appName('MGSI-ten-year-SQL').getOrCreate()
     sc=spark.sparkContext
     assert spark.version=='2.1.0' and sc.master=='spark://192.0.2.64:7077'
     deadline=time.time()+120

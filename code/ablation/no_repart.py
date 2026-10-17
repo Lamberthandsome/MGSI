@@ -1,8 +1,8 @@
-"""消融新增变体：Remove Dynamic Repartitioning（论文表7第5行，原代码缺失，本文件补齐）
+"""消融变体：Remove Dynamic Repartitioning
 
 语义：保留三级索引结构，但去掉"按查询命中块动态构造Table"的按需加载/动态调度，
 改为静态策略——一次性把全部256×N个分块的均值全量载入并建表，
-查询在SQL层用WHERE过滤（对应论文"static range-based strategy"）。
+查询在SQL层用WHERE过滤（static range-based strategy）。
 
 与 mgsi-2-x 无索引全扫的区别：这里索引剪枝仍发生（打印命中数），
 但数据加载不做动态调度，全量块进Table。

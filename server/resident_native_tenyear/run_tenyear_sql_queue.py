@@ -75,7 +75,7 @@ def main():
         for repeat in ((1,2) if region in (1,8) else (1,)):
             idle()
             state(status='FLINK_SQL',region=region,repeat=repeat)
-            command=['/opt/mgsi-cluster/flink/bin/flink','run','-m','192.0.2.64:8081','-p','72','-C','file:///opt/mgsi-experiments/20261006-cross-baseline-audit/flink-sql-parquet_2.11-1.11.3.jar','-py',str(ROOT/'run_tenyear_flink_sql.py'),'--region',str(region),'--repeat',str(repeat)]
+            command=['/opt/mgsi-cluster/flink/bin/flink','run','-m','192.0.2.64:8081','-p','72','-C','file:///opt/mgsi-experiments/cross_baseline_audit/flink-sql-parquet_2.11-1.11.3.jar','-py',str(ROOT/'run_tenyear_flink_sql.py'),'--region',str(region),'--repeat',str(repeat)]
             with (ROOT/'flink_sql_R{}_{}.log'.format(region,repeat)).open('wb') as stream:
                 subprocess.run(command,cwd=str(ROOT),stdout=stream,stderr=subprocess.STDOUT,check=True)
             rows=[json.loads(line) for line in (ROOT/'sql_results.jsonl').read_text().splitlines()]

@@ -27,8 +27,8 @@ from matrix_common import (native_fs, mapper, clone_and_raster_tile, chirps_to_z
                            RASTER_SCHEMA, encode_raster, merge, host)
 
 ROOT=Path(__file__).resolve().parent
-OLD=Path('/opt/mgsi-experiments/20261007-modern-baselines')
-HDFS='/mgsi-experiments/20261007-modern-matrix/'+ROOT.name
+OLD=Path('/opt/mgsi-experiments/modern_baselines')
+HDFS='/mgsi-experiments/modern_matrix/'+ROOT.name
 
 
 def write(name, value):
@@ -110,7 +110,7 @@ def setup():
         'zarr_netcdf':'Full Zarr v2 native values and coordinate centers; chunks daily (GLEAM) or 24 hourly observations (ECMWF) by source-aligned spatial tiles, Blosc/Zstd3/bitshuffle; no time or region subset.',
         'zarr_chirps':'All 3652 daily full-grid rasters, float32, chunks (1,500,1440), Blosc/Zstd3.',
         'storage':'New experiment files replication 2, originals unchanged; stop scheduling preparation below 350GiB free.',
-        'scope_limit':'Pilot matrix of new baselines; formal MGSI comparison and remaining reviewer experiments are separate work.'})
+        'scope':'Pilot matrix of the new baselines.'})
     print('MATRIX_PROTOCOL_READY',flush=True)
 
 

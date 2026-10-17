@@ -1,7 +1,7 @@
 """消融变体3：Remove Local Index —— 移植自 D:\files\mgsi-code\ablation\mgsi3.py
 
 去掉local_hash（本地哈希索引）。命中分块后需要重新解析整个文件头（load_and_chunk）
-来找回分块的经纬度范围，再读一次文件提取数据——即论文所述
+来找回分块的经纬度范围，再读一次文件提取数据
 "TaskManagers 扫描本地文件头来定位数据段"的行为。
 全局KD-tree与内存KD-tree保留。
 全局范围索引采用正文明确的逐层质心构树与完整块子树剪枝。

@@ -25,9 +25,9 @@ def main():
     setup=time.perf_counter()
     env=BatchTableEnvironment.create(environment_settings=EnvironmentSettings.new_instance().use_blink_planner().in_batch_mode().build())
     env.get_config().get_configuration().set_integer('parallelism.default',72)
-    env.get_config().get_configuration().set_string('pipeline.jars','file:///opt/mgsi-experiments/20261006-cross-baseline-audit/flink-sql-parquet_2.11-1.11.3.jar')
+    env.get_config().get_configuration().set_string('pipeline.jars','file:///opt/mgsi-experiments/cross_baseline_audit/flink-sql-parquet_2.11-1.11.3.jar')
     env.execute_sql("CREATE TABLE points (`month` STRING,lat DOUBLE,lon DOUBLE,`value` DOUBLE) WITH ('connector'='filesystem','path'='{}','format'='parquet')".format(source['parquet_path']))
-    output='/mgsi-experiments/20261006-resident-native/flink_sql_R{}_{}/{}'.format(args.region,args.repeat,time.time_ns() if hasattr(time,'time_ns') else int(time.time()*1e9))
+    output='/mgsi-experiments/resident_native/flink_sql_R{}_{}/{}'.format(args.region,args.repeat,time.time_ns() if hasattr(time,'time_ns') else int(time.time()*1e9))
     env.execute_sql("CREATE TABLE output (`month` STRING,total DOUBLE,n BIGINT) WITH ('connector'='filesystem','path'='hdfs://192.0.2.64:9000{}','format'='csv')".format(output))
     box=meta['boxes'][str(args.region)]
     query='INSERT INTO output SELECT `month`,SUM(`value`),COUNT(*) FROM points WHERE lat BETWEEN {lat_min} AND {lat_max} AND lon BETWEEN {lon_min} AND {lon_max} GROUP BY `month`'.format(**box)

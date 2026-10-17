@@ -54,7 +54,7 @@ public class SedonaMatrix {
         JsonNode boxes=JSON.readTree(root.resolve("boxes.json").toFile());
         JsonNode inputs=JSON.readTree(root.resolve("matrix_inputs.json").toFile());
         long initialization=System.nanoTime();
-        SparkSession spark=SedonaContext.create(SedonaContext.builder().appName("MGSI-modern-Sedona-"+HOSTS.size()+"-workers-20261007")
+        SparkSession spark=SedonaContext.create(SedonaContext.builder().appName("MGSI-modern-Sedona-"+HOSTS.size()+"-workers")
             .config("spark.sql.shuffle.partitions",Integer.toString(cores)).config("spark.sql.files.maxPartitionBytes","67108864")
             .config("spark.sql.parquet.filterPushdown","true").config("spark.sql.adaptive.enabled","false").getOrCreate());
         Reader reader=new Reader(); spark.sparkContext().addSparkListener(reader);

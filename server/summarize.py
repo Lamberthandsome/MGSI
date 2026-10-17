@@ -41,7 +41,7 @@ def main():
             verified.append({'file':str(path),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'queries':len(rows)})
     if not args.stage_only: assert len(all_rows)==32 and len(verified)==4
     (ROOT/'verified_summary.json').write_text(json.dumps({'status':'PASS','files':verified,'cells':all_rows,
-        'scope':'GLEAM spatial first batch only; no other reviewer items automatically closed'},indent=2))
+        'scope':'GLEAM spatial first batch'},indent=2))
     with (ROOT/'query_statistics.csv').open('w',newline='') as out:
         names=['dataset','method','region','mean_seconds','stddev_seconds','measured_repeats','warmup_repeats_separate','raw_measured_seconds']
         w=csv.DictWriter(out,fieldnames=names); w.writeheader(); w.writerows(all_rows)

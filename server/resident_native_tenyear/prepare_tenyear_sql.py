@@ -11,7 +11,7 @@ import pyarrow.parquet as pq
 from hdfs import InsecureClient
 
 ROOT=Path(__file__).resolve().parent
-sys.path.insert(0,'/opt/mgsi-experiments/20261006-cross-baseline-audit')
+sys.path.insert(0,'/opt/mgsi-experiments/cross_baseline_audit')
 from audit_worker import ExactRangeFile
 
 
@@ -21,7 +21,7 @@ def main():
     golden={r['case']:r['monthly_values'] for r in json.loads((ROOT/'golden_results.json').read_text())}
     fs=pa.hdfs.connect(host='192.0.2.64',port=9000,user='root')
     client=InsecureClient('http://192.0.2.64:50070',user='root')
-    destination='/mgsi-experiments/20261006-resident-native/global_parquet_v1'
+    destination='/mgsi-experiments/resident_native/global_parquet_v1'
     assert not fs.exists(destination)
     fs.mkdir(destination)
     references={1:{},8:{}}

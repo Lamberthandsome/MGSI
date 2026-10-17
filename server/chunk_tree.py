@@ -1,7 +1,7 @@
 """Deterministic centroid KD-tree with bounds covering complete chunks.
 
-The range-query rules are specified in the Global Index subsection of the
-revised manuscript. This module needs only the Python standard library.
+Range queries walk the tree with box-overlap tests against the stored
+bounds. This module needs only the Python standard library.
 Coordinates must describe finite, non-wrapping closed boxes in one encoding.
 """
 from collections import namedtuple

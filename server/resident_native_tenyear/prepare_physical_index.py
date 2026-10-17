@@ -12,14 +12,14 @@ import numpy as np
 from hdfs import InsecureClient
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, '/opt/mgsi-experiments/20261006-cross-baseline-audit')
+sys.path.insert(0, '/opt/mgsi-experiments/cross_baseline_audit')
 from audit_worker import ExactRangeFile
 
 
 def main():
     started = time.perf_counter()
-    plan = json.loads(Path('/opt/mgsi-experiments/20261006-alignment-rpc/plan_gleam_1981_1990_spatial.json').read_text())
-    source = Path('/opt/mgsi-experiments/20261006-alignment-rpc/results_gleam_1981_1990_spatial_rpc.jsonl')
+    plan = json.loads(Path('/opt/mgsi-experiments/alignment_rpc/plan_gleam_1981_1990_spatial.json').read_text())
+    source = Path('/opt/mgsi-experiments/alignment_rpc/results_gleam_1981_1990_spatial_rpc.jsonl')
     golden = [json.loads(line) for line in source.read_text().splitlines()]
     (ROOT / 'golden_results.json').write_text(json.dumps(golden))
     tasks = next(case['tasks'] for case in plan['cases'] if case['region'] == 8)
@@ -30,7 +30,7 @@ def main():
     client = InsecureClient('http://192.0.2.64:50070', user='root')
     result = {'dataset': 'GLEAM', 'version': 'v4.3a', 'units': 'mm.day-1', 'files': [], 'entries': [],
               'boxes': {str(case['region']): case['tasks'][0]['box'] for case in plan['cases']},
-              'scope': '1981-1990; every monthly 15th; all eight thesis spatial boxes; native source unchanged.'}
+              'scope': '1981-1990; every monthly 15th; all eight spatial boxes; native source unchanged.'}
     verification = []
     for fid, (path, bucket) in enumerate(sorted(byfile.items())):
         before = client.status(path)

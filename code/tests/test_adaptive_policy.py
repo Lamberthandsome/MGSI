@@ -11,8 +11,7 @@ import unittest
 
 sys.dont_write_bytecode = True
 sys.stdout.reconfigure(encoding="utf-8")
-ROOT = Path(__file__).resolve().parents[3]
-WORK = ROOT / "MGSI-Reproduction/revision_work/P58_repartition_completed_20261013"
+WORK = Path(__file__).resolve().parent / ".work"
 WORK.mkdir(parents=True,exist_ok=True)
 module_path = Path(__file__).resolve().parents[1] / "mgsi_common/adaptive_policy.py"
 spec = importlib.util.spec_from_file_location("adaptive_policy",module_path)

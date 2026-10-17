@@ -139,7 +139,7 @@ def main():
     meta = json.loads(meta_path.read_text())
     golden = {row['case']: row['monthly_values'] for row in json.loads((ROOT/'golden_results.json').read_text())}
     entries = meta['entries']
-    # The thesis uses the upper-left representative; exact extents guard pruning.
+    # The layout uses the upper-left representative; exact extents guard pruning.
     representatives = [(e['lon_min'], e['lat_max']) for e in entries]
     tree = KDTree(np.asarray(representatives))
     max_diagonal = max(math.hypot(e['lon_max']-e['lon_min'], e['lat_max']-e['lat_min']) for e in entries)
