@@ -36,23 +36,8 @@ def remote(host, command, timeout=150):
     if p.returncode: raise RuntimeError(host+' command failed: '+p.stderr[-1500:]+' '+p.stdout[-1500:])
     return p.stdout
 
-def units(host,small):
-    names=['mgsi-flink-taskmanager@{}.service'.format(i) for i in range(1,7)]
-    if small:
-        remote(host,'systemctl stop mgsi-flink-taskmanager.service '+' '.join(names))
-        remote(host,'systemctl start '+' '.join(names[:4]))
-    else: remote(host,'systemctl start mgsi-flink-taskmanager.service')
-
-def small_profile():
-    v=overview(); assert v['jobs-running']==0 and v['slots-available']==v['slots-total'],v
-    with ThreadPoolExecutor(max_workers=4) as pool: list(pool.map(lambda h:units(h,True),WORKERS))
-    until=time.monotonic()+180
-    while time.monotonic()<until:
-        v=overview()
-        if v['taskmanagers']==16 and v['slots-available']==v['slots-total']==48 and not v['jobs-running']:
-            (ROOT/'small_flink_profile.json').write_text(json.dumps(v,indent=2)); return
-        time.sleep(1)
-    raise RuntimeError('Reduced Flink profile unavailable: '+str(v))
+def units(host):
+    remote(host,'systemctl start mgsi-flink-taskmanager.service')
 
 def stop_owned_roles():
     for host in HOSTS:
@@ -104,7 +89,7 @@ def restore():
         subprocess.run(['systemctl','start','mgsi-flink-jobmanager'],check=True,timeout=120)
         try: cancel_owned_flink()
         except Exception as exc: errors.append('Owned query cleanup: '+str(exc))
-        with ThreadPoolExecutor(max_workers=4) as pool: list(pool.map(lambda h:units(h,False),WORKERS))
+        with ThreadPoolExecutor(max_workers=4) as pool: list(pool.map(units,WORKERS))
         until=time.monotonic()+180
         while time.monotonic()<until:
             v=overview()
@@ -164,7 +149,6 @@ def main():
         state(status='PREPARING',current='prepare_current')
         child('prepare_current',[PYTHON,str(ROOT/'prepare_current.py')],timeout=3600)
         child('deploy_native_metadata',[PYTHON,str(__file__),'--deploy-native'],timeout=600)
-        child('small_flink_profile',[PYTHON,str(__file__),'--small-flink'],timeout=600)
         child('gleam_mgsi',[PY37,str(ROOT/'gleam_mgsi/run_resident.py')],timeout=7200)
         child('verify_mgsi',[PYTHON,str(ROOT/'gleam_mgsi/summarize.py'),'--stage-only'],timeout=120)
         for label,stage,extra in [('gleam_native','native',[]),('gleam_zarr','dask',['--dask-methods','xarray_zarr']),('gleam_sedona','sedona',[])]:
@@ -183,7 +167,6 @@ def main():
         fcntl.flock(lock,fcntl.LOCK_UN); lock.close()
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(); parser.add_argument('--small-flink',action='store_true'); parser.add_argument('--deploy-native',action='store_true'); args=parser.parse_args()
-    if args.small_flink: small_profile()
-    elif args.deploy_native: deploy_native_metadata()
+    parser=argparse.ArgumentParser(); parser.add_argument('--deploy-native',action='store_true'); args=parser.parse_args()
+    if args.deploy_native: deploy_native_metadata()
     else: main()

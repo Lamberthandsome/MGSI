@@ -1,8 +1,8 @@
 """Temporal/point/kNN queries over the converted Zarr stores via xarray/Dask.
 
-Protocol: one unrecorded warmup, two measured runs; a third measured run is
-added automatically when the relative spread of the two exceeds 20%, and the
-median of three is reported. Every run must validate against the independent
+Protocol: one unrecorded warmup followed by five measured runs; the mean and
+sample standard deviation of the five are reported. Every run must validate
+against the independent
 tpk_reference.json before any PASS is recorded. Timing covers store open,
 graph construction, compute and final aggregation; initialization separate.
 """
@@ -23,7 +23,6 @@ from tpk_common import (K, MANIFEST_DIR, WINDOW_1YR, WINDOW_10YR, YANGTZE,
                         native_fs, window_mask)
 
 ROOT = Path(__file__).resolve().parent
-SPREAD_LIMIT = 0.20
 
 
 def json_default(value):
@@ -147,7 +146,7 @@ def main():
         {n: hashlib.sha256((ROOT / n).read_bytes()).hexdigest() for n in names}, indent=1))
     try:
         runs = []
-        for repeat in range(4):
+        for repeat in range(6):
             label = 'warmup' if repeat == 0 else 'measured'
             with get_task_stream(client=client) as trace:
                 timer = time.perf_counter()
@@ -167,21 +166,17 @@ def main():
                          'task_trace_sha256': hashlib.sha256(trace_path.read_bytes()).hexdigest()})
             print('TPK_ZARR_RUN ' + json.dumps({'dataset': dataset, 'mode': mode, 'run': label,
                                                 'seconds': elapsed}), flush=True)
-            if repeat == 2:
-                a, b = runs[1]['seconds'], runs[2]['seconds']
-                if abs(a - b) <= SPREAD_LIMIT * min(a, b):
-                    break
-            if repeat >= 3:
-                break
         measured = [r['seconds'] for r in runs[1:]]
-        assert len(measured) in (2, 3)
-        statistic = float(np.median(measured)) if len(measured) == 3 else float(np.mean(measured))
+        assert len(measured) == 5
+        statistic = float(np.mean(measured))
+        sample_std = float(np.std(measured, ddof=1))
         record = {'status': 'PASS', 'method': 'xarray_zarr', 'dataset': dataset, 'mode': mode,
-                  'protocol': 'one warmup unrecorded; two measured runs; third measured run added when relative '
-                              'spread exceeded 20%; median of three then reported; no persist/result cache; '
+                  'protocol': 'one unrecorded warmup; five measured runs; mean and sample standard '
+                              'deviation of the five reported; no persist/result cache; '
                               'initialization separate; OS/HDFS caches uncontrolled and disclosed',
-                  'spread_limit': SPREAD_LIMIT, 'measured_runs': measured,
-                  'reported_statistic': statistic, 'statistic_rule': 'median' if len(measured) == 3 else 'mean',
+                  'measured_runs': measured,
+                  'reported_statistic': statistic, 'sample_std': sample_std,
+                  'statistic_rule': 'mean±sample_std',
                   'result': runs[-1]['result'], 'runs': runs, 'initialization_seconds_separate': initialization,
                   'scope': inputs['scope'], 'store_paths': preparation['zarr']['stores']}
         with output.open('a') as stream:

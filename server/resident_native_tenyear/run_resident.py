@@ -146,7 +146,9 @@ def main():
     pin = {'files': {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
                      for name in ('ResidentMGSI.java', 'resident-mgsi.jar', 'run_resident.py', 'physical_index.with_blocks.json', 'golden_results.json')},
            'scope': meta['scope'], 'cache_per_jvm_bytes': 512*1024**2,
-           'protocol': 'Resident Flink/JVM; first query per region clears selected-plane cache, then five repeated queries; OS/HDFS cache uncontrolled; no aggregate-result cache; initialization timed separately.'}
+           'protocol': 'Resident Flink/JVM; every query clears the selected-plane cache before timing; '
+                       'five measured queries per region; OS/HDFS cache uncontrolled; no aggregate-result '
+                       'cache; initialization timed separately.'}
     connections = Connections()
     (ROOT/'run_pin.json').write_text(json.dumps(pin, indent=2))
     started = time.perf_counter()
@@ -191,7 +193,7 @@ def main():
                     byroute[assignment[entry_id]].append(entry_id)
                 requests = [{'type':'query','route':route,'query_id':query_id,'entries':byroute[route],
                              'box':[box['lat_min'],box['lat_max'],box['lon_min'],box['lon_max']],
-                             'clear_epoch':query_id if repeat==0 else ''} for route in range(72)]
+                             'clear_epoch':query_id} for route in range(72)]
                 connections.send(requests)
                 rows = connections.results(query_id)
                 monthly = {}
@@ -208,7 +210,7 @@ def main():
                     assert monthly[month]['count'] == expected[month]['count'], (query_id,month,'count',monthly[month],expected[month])
                     assert math.isclose(monthly[month]['sum'], expected[month]['sum'], rel_tol=1e-9, abs_tol=1e-6), (query_id,month,'sum',monthly[month],expected[month])
                 record = {'status':'PASS','query_id':query_id,'job_id':job_id,'region':region,'repeat':repeat,
-                          'mode':'selected_plane_cache_cleared' if repeat==0 else 'repeated_resident_query',
+                          'mode':'warmup' if repeat==0 else 'measured',
                           'until_final_120_month_results_seconds':elapsed,'monthly_values':monthly,
                           'physical_read_bytes':sum(row['physical_read_bytes'] for row in rows),
                           'plane_cache_hits':sum(row['plane_cache_hits'] for row in rows),
