@@ -244,7 +244,7 @@ public class SedonaTPK {
                 summary.put("statistic_rule", "mean±sample_std");
                 Files.write(root.resolve("sedona_" + mode + "_" + dataset + "_state.json"),
                     JSON.writeValueAsBytes(summary));
-                System.out.println("TPK_SEDONA_QUERY_PASS " + dataset + " " + mode + " measured=" + measured + " statistic=" + statistic);
+                System.out.println("TPK_SEDONA_QUERY_PASS " + dataset + " " + mode + " measured=" + measured + " statistic=" + mean);
             }
         } finally { spark.stop(); }
     }
