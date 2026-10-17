@@ -124,4 +124,4 @@ Apache License 2.0，见 [LICENSE](LICENSE)。
 
 ## 引用
 
-如使用本代码，请引用：https://github.com/Lamberthandsome/MGSI
+如使用本代码，请引用：https://github.com/Lamberthandsome/MGSI （归档 DOI: [10.5281/zenodo.23429602](https://doi.org/10.5281/zenodo.23429602)）
