@@ -1,6 +1,6 @@
 # MGSI
 
-MGSI（Multi-level Grid-based Spatiotemporal Index）是一个面向流域时空数据的多级地理空间流索引系统。
+MGSI（Multi-level Grid-based Spatiotemporal Index）是一个面向流域归档栅格数据的多级时空索引系统。
 它把 NetCDF / GeoTIFF 气候数据组织为逻辑分块（chunk tree），在其上维护全局质心 KD 树，
 以常驻 Flink 作业的方式提供时间范围、空间范围、点查询与 k-NN 服务，并在运行时根据负载
 对分块做分裂 / 合并 / 迁移（动态负载均衡）。
@@ -24,6 +24,8 @@ MGSI/
 │   └── run.sh  run_all.sh   #   统一入口
 ├── server/                  # 五节点集群部分
 │   ├── ResidentMGSI.java    #   常驻 MGSI Flink 作业
+│   ├── JobManagerGlobalIndexSource.java # JobManager 全局树与候选筛选
+│   ├── build_resident.sh   #   一并编译作业和全局索引组件
 │   ├── SedonaMatrix.java    #   Sedona 基线
 │   ├── prepare_*.py         #   HDFS 数据清点与物理索引准备
 │   ├── run_*.py             #   作业提交与对照实验
@@ -105,6 +107,32 @@ bash code/run.sh report/build_tables.py                    # 汇总生成表格
 3. `experiments/` 下每组实验自带 `prepare_*` / `run_*` / `analysis_*` 脚本和链式
    shell 脚本，进入对应目录按顺序执行即可复现该组实验。
 
+### 全局索引部署
+
+当前集群查询入口为 `server/run_resident.py`，提交的 Flink 作业为
+`server/ResidentMGSI.java`。该入口只发送查询框和初始分块归属，并核对结果。
+`JobManagerGlobalIndexSource.java` 使用 Flink 1.11.3 的 Source API，由 JobManager
+中的 `SourceCoordinator/SplitEnumerator` 构建全局质心 KD 树，执行完整范围相交筛选，
+再把各路请求交给 TaskManager。SourceReader 只输出已分派的请求。该部署遵循
+[Flink 1.11 Source API](https://nightlies.apache.org/flink/flink-docs-release-1.11/dev/stream/sources.html)
+对枚举器与读取器的职责划分。
+
+`run_resident.py` 启动前调用 `build_resident.sh`，一并编译两个 Java 源文件。
+设置 `FLINK_HOME`、`HADOOP_HOME`（或 `HADOOP_CLASSPATH`）及 `JAVA_HOME` 后运行。
+物理元数据须在 JobManager 和工作节点可访问的相同路径准备好。
+初始化记录 `global_index_cost.json` 包含 JobManager 枚举器返回的 JVM、协调线程、
+节点数和构建耗时；每个查询的 `global_index_plan` 记录候选条目及筛选位置。
+驱动会用完整边界逐项核对候选集合，不在驱动中建全局树或预先筛选请求。
+
+本地功能核验见 `server/tests/test_jobmanager_source.py`，使用真实 Flink MiniCluster
+和元数据样例，验证全局候选、边界相交、任务路由及停止流程，不读取气候数据或 HDFS。
+
+```bash
+python server/tests/test_jobmanager_source.py \
+  --classpath "$FLINK_HOME/lib/*:$HADOOP_CLASSPATH" \
+  --classes-dir server/.resident_build --report source-check.json
+```
+
 单元测试：`code/tests/`（重分区策略、全局索引）；`experiments/dynamic_lb/` 自带
 `fake_executor.py` 离线执行器和录制的负载序列（`workload_*.json`），不接集群即可
 验证均衡逻辑。
@@ -113,8 +141,9 @@ bash code/run.sh report/build_tables.py                    # 汇总生成表格
 
 ### 入口与口径
 
-- 集群对照：`server/controlled_pipeline.py`（24 TaskManager 布局）与
-  `server/resident_native_tenyear/run_resident.py`（十年常驻）
+- 当前集群查询：`server/run_resident.py`，以及调用该入口副本的
+  `server/controlled_pipeline.py`（24 TaskManager 布局）。`resident_native_tenyear/`
+  和各实验目录保留独立实验变体，部署当前全局索引时使用上述主入口。
 - k-NN：`code/nearest/local_mgsi.py`（k=10）与 `experiments/knn_tpk/`（k=10）
 - 计时：每个实验 1 次预热 + 5 次正式计时，报告均值 ± 样本标准差；每次计时前清空
   应用层缓存，已构建的索引 / 元数据可复用；初始化与索引构建不计入查询延迟，

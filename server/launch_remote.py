@@ -17,7 +17,7 @@ def main():
         'scope':'MGSI + Sedona + original-file xarray/Dask + Zarr/Dask; first GLEAM spatial batch',
         'legacy_auto_resume':False,'dynamic_load_and_failure_injection_authorized':False}
     (ROOT/'authorization.json').write_text(json.dumps(authorization,ensure_ascii=False,indent=2))
-    files=[p for p in ROOT.iterdir() if p.suffix in ('.py','.java')]
+    files=[p for p in ROOT.iterdir() if p.suffix in ('.py','.java','.sh')]
     (ROOT/'code_pin.json').write_text(json.dumps({p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in files},indent=2))
     env=os.environ.copy(); env.update(PYTHONDONTWRITEBYTECODE='1',OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1',
         LIBHDFS_OPTS='-Xmx256m -XX:ActiveProcessorCount=3',PYTHONPATH=str(ROOT))

@@ -78,17 +78,19 @@ def main():
         '/app/hadoop-2.7.2/share/hadoop/common/lib/*','/app/hadoop-2.7.2/share/hadoop/hdfs/*',
         '/app/hadoop-2.7.2/share/hadoop/hdfs/lib/*'])
     classes=ROOT/'classes_mgsi'; classes.mkdir()
-    subprocess.run(['/opt/mgsi-modern/jdk17/bin/javac','--release','8','-cp',cp,'-d',str(classes),str(ROOT/'ResidentMGSI.java')],check=True)
+    subprocess.run(['/opt/mgsi-modern/jdk17/bin/javac','--release','8','-cp',cp,'-d',str(classes),
+        str(ROOT/'JobManagerGlobalIndexSource.java'),str(ROOT/'ResidentMGSI.java')],check=True)
     subprocess.run(['/opt/mgsi-modern/jdk17/bin/jar','cf',str(ROOT/'resident-mgsi.jar'),'-C',str(classes),'.'],check=True)
     java=str(Path(os.environ['JAVA_HOME'])/'bin/java')
     subprocess.run([java,'-cp',str(ROOT/'resident-mgsi.jar')+':'+cp,'ResidentMGSI','blockmap',
         str(ROOT/'physical_index.json'),str(ROOT/'physical_index.with_blocks.json')],check=True)
     current=json.loads((ROOT/'physical_index.with_blocks.json').read_text())
-    assert len(current['entries'])==5000 and len(current['files'])==10
+    assert current['entries'] and len(current['files'])==len(identities)
+    assert {entry['entry_id'] for entry in current['entries']}==set(range(len(current['entries'])))
     for source in identities:
         info=fs.get_file_info(source['path']); assert (info.size,info.mtime_ns)==(source['bytes'],source['mtime_ns'])
     stages=['gleam_mgsi','gleam_native','gleam_zarr','gleam_sedona']
-    names=[p for p in ROOT.iterdir() if p.is_file() and (p.suffix in ('.py','.java','.jar') or p.name in
+    names=[p for p in ROOT.iterdir() if p.is_file() and (p.suffix in ('.py','.java','.jar','.sh') or p.name in
         ('matrix_inputs.json','boxes.json','gleam_reference.json','gleam_preparation.json','protocol.json',
          'physical_index.with_blocks.json','golden_results.json','input_identity.json'))]
     for label in stages:

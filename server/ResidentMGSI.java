@@ -9,10 +9,10 @@ import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
 import org.apache.flink.api.common.typeinfo.TypeHint;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
+import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.api.functions.source.RichSourceFunction;
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.*;
 import org.apache.flink.shaded.jackson2.com.fasterxml.jackson.databind.node.*;
@@ -180,19 +180,6 @@ public class ResidentMGSI {
             planes.put(key,values);cacheBytes+=size;return values;
         }
     }
-    static class RequestSource extends RichSourceFunction<Tuple2<Integer,String>> {
-        final String host;final int port;volatile boolean running=true;transient Socket socket;
-        RequestSource(String h,int p){host=h;port=p;}
-        public void run(SourceContext<Tuple2<Integer,String>> context)throws Exception{
-            socket=new Socket(host,port);socket.setTcpNoDelay(true);
-            PrintWriter writer=new PrintWriter(new OutputStreamWriter(socket.getOutputStream(),StandardCharsets.UTF_8),true);
-            writer.println("{\"type\":\"source\"}");
-            BufferedReader input=new BufferedReader(new InputStreamReader(socket.getInputStream(),StandardCharsets.UTF_8));
-            String line;while(running&&(line=input.readLine())!=null){JsonNode j=JSON.readTree(line);if(j.get("type").asText().equals("stop"))break;
-                synchronized(context.getCheckpointLock()){context.collect(Tuple2.of(j.get("route").asInt(),line));}}
-        }
-        public void cancel(){running=false;try{if(socket!=null)socket.close();}catch(Exception ignored){}}
-    }
     static class DirectPartition implements Partitioner<Integer>{public int partition(Integer key,int n){if(key<0||key>=n)throw new IllegalArgumentException("route");return key;}}
     static class NativeQuery extends RichMapFunction<Tuple2<Integer,String>,String>{
         final String path;transient Pool pool;
@@ -269,7 +256,11 @@ public class ResidentMGSI {
         if(args[0].equals("blockmap")){blockmap(args[1],args[2]);return;}
         String host=args[0],metadata=args[2];int port=Integer.parseInt(args[1]);
         StreamExecutionEnvironment env=StreamExecutionEnvironment.getExecutionEnvironment();env.setParallelism(72);env.setBufferTimeout(0);env.setRestartStrategy(RestartStrategies.noRestart());
-        env.addSource(new RequestSource(host,port),TypeInformation.of(new TypeHint<Tuple2<Integer,String>>(){})).name("MGSI archived-query requests").setParallelism(1)
+        env.fromSource(new JobManagerGlobalIndexSource(host,port,metadata,72),
+                WatermarkStrategy.<Tuple2<Integer,String>>noWatermarks(),
+                "MGSI JobManager global-index query routing",
+                TypeInformation.of(new TypeHint<Tuple2<Integer,String>>(){})).setParallelism(1)
+            .uid("mgsi-jobmanager-global-index")
             .partitionCustom(new DirectPartition(),0)
             .map(new NativeQuery(metadata)).name("MGSI native physical-index and cached KD query").setParallelism(72)
             .addSink(new ResultSink(host,port)).name("MGSI complete result return").setParallelism(72);

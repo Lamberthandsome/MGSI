@@ -10,6 +10,7 @@ results/
 *.log
 *.jsonl
 *.jar
+server/.resident_build/
 physical_index*.json
 global_index_cost_*.json
 golden_results.json
