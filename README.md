@@ -38,8 +38,7 @@ MGSI/
 │   ├── ablation_merra2/         # MERRA-2 消融
 │   ├── broadcast/               # 元数据广播（预分发 vs 缓存）
 │   ├── dynamic_lb/              # 动态负载均衡（策略、离线验证、负载序列）
-│   ├── knn_tpk/                 # k-NN（k=10）与 TPK 正式入口
-│   └── knn8_tpk/                # 早期 k=8 批次（历史）
+│   └── knn_tpk/                 # k-NN（k=10）与 TPK 基线
 ├── requirements.txt
 ├── LICENSE                  # Apache License 2.0
 └── README.md
@@ -114,22 +113,12 @@ bash code/run.sh report/build_tables.py                    # 汇总生成表格
 
 ### 入口与口径
 
-正式实验入口与口径：
-
 - 集群对照：`server/controlled_pipeline.py`（24 TaskManager 布局）与
   `server/resident_native_tenyear/run_resident.py`（十年常驻）
 - k-NN：`code/nearest/local_mgsi.py`（k=10）与 `experiments/knn_tpk/`（k=10）
-- 计时：1 次预热 + 5 次正式计时，报告均值 ± 样本标准差
-
-仓库中保留的历史版本（非正式入口，仅用于追溯）：
-
-- `server/run_resident.py`：早期 16 TaskManager / 48 slot 布局的常驻入口
-- `experiments/knn8_tpk/`：早期 k=8、单次计时 2–3 次的批次
-- 部分链式脚本（如 `experiments/ablation_gleam/ablation_chain.sh`、动态负载均衡的
-  对照脚本）按实验需要切换 16 TaskManager 布局，属该组实验的专用设置
-
-- 计时口径说明：每次计时前清空应用层缓存，已构建的索引 / 元数据可复用；初始化与索引构建
-  不计入查询延迟，单独统计（见 `experiments/scalability_index_cost/`）。
+- 计时：每个实验 1 次预热 + 5 次正式计时，报告均值 ± 样本标准差；每次计时前清空
+  应用层缓存，已构建的索引 / 元数据可复用；初始化与索引构建不计入查询延迟，
+  单独统计（见 `experiments/scalability_index_cost/`）
 - 托管缓存配置（`code/java/mgsi/cache/`）：8 GiB TM 进程、2 GiB 托管内存、
   512 MiB 缓存池、32 KiB 页、四槽位时每子任务 128 MiB、读取缓冲上限 16 MiB，
   详见组件内 README。
