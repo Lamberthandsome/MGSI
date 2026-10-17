@@ -1,6 +1,6 @@
 # MGSI
 
-MGSI（Multi-level Geospatial Stream Index）是一个面向流域时空数据的多级地理空间流索引系统。
+MGSI（Multi-level Grid-based Spatiotemporal Index）是一个面向流域时空数据的多级地理空间流索引系统。
 它把 NetCDF / GeoTIFF 气候数据组织为逻辑分块（chunk tree），在其上维护全局质心 KD 树，
 以常驻 Flink 作业的方式提供时间范围、空间范围、点查询与 k-NN 服务，并在运行时根据负载
 对分块做分裂 / 合并 / 迁移（动态负载均衡）。
@@ -16,7 +16,7 @@ MGSI/
 │   ├── java/mgsi/cache/     #   托管页缓存（Flink MemoryManager 原生内存）
 │   ├── time_range/          #   时间范围查询（MGSI / Flink SQL / Spark SQL）
 │   ├── spatial_range/       #   空间范围查询 R1–R8
-│   ├── point/  nearest/     #   点查询、k-NN（k=8）
+│   ├── point/  nearest/     #   点查询、k-NN（k=10）
 │   ├── tiff/                #   GeoTIFF（CHIRPS）查询
 │   ├── dataset_change/      #   数据集适配（ERA5、GLEAM、MERRA-2、NCEP/NCAR）
 │   ├── ablation/            #   消融变体
@@ -38,7 +38,8 @@ MGSI/
 │   ├── ablation_merra2/         # MERRA-2 消融
 │   ├── broadcast/               # 元数据广播（预分发 vs 缓存）
 │   ├── dynamic_lb/              # 动态负载均衡（策略、离线验证、负载序列）
-│   └── knn8_tpk/                # k-NN 与 TPK 基线
+│   ├── knn_tpk/                 # k-NN（k=10）与 TPK 正式入口
+│   └── knn8_tpk/                # 早期 k=8 批次（历史）
 ├── requirements.txt
 ├── LICENSE                  # Apache License 2.0
 └── README.md
@@ -71,13 +72,13 @@ MGSI/
 | 数据集 | 变量 | 下载地址 | 说明 |
 |---|---|---|---|
 | MERRA-2 | `PRECTOT`（tavg1_2d_flx_Nx） | https://disc.gsfc.nasa.gov/datasets/M2T1NXFLX.5.12.4/ | 需免费注册 NASA Earthdata |
-| ERA5 | `tp` 等 | https://cds.climate.copernicus.eu/ | 需注册 Copernicus 账号 |
-| CHIRPS v2.0 | 降水（GeoTIFF） | https://www.chc.ucsb.edu/data/chirps | 公开直链 |
+| ERA5 | `e` | https://cds.climate.copernicus.eu/ | 需注册 Copernicus 账号 |
+| CHIRPS v2.0 | 降水（日值 GeoTIFF，0.05°） | https://www.chc.ucsb.edu/data/chirps | 公开直链 |
 | GLEAM | `Eb` 蒸散 | https://www.gleam.eu/ | 需邮件申请账号 |
 | NCEP/NCAR R1 | `PRATE_GDS4_SFC_S113` | https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html | 公开 |
 
-CHIRPS 全球月值 GeoTIFF 直链模板：
-`https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_monthly/tifs/chirps-v2.0.<YYYY>.<MM>.tif`
+CHIRPS 全球日值 0.05° GeoTIFF 直链模板：
+`https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_daily/tifs/p05/chirps-v2.0.<YYYY>.<MM>.<DD>.tif`
 
 MERRA-2 逐日文件 URL 模板：
 `https://data.gesdisc.earthdata.nasa.gov/data/MERRA2/M2T1NXFLX.5.12.4/<YYYY>/<MM>/MERRA2_100.tavg1_2d_flx_Nx.<YYYYMMDD>.nc4`
@@ -90,9 +91,9 @@ MERRA-2 逐日文件 URL 模板：
 ### 单机
 
 ```bash
-bash code/run.sh code/time_range/local_mgsi.py merra2_single   # 单个实验
+bash code/run.sh time_range/local_mgsi.py merra2_single   # 单个实验
 bash code/run_all.sh 5                                          # 全部实验，重复 5 次
-bash code/run.sh code/report/build_tables.py                    # 汇总生成表格
+bash code/run.sh report/build_tables.py                    # 汇总生成表格
 ```
 
 ### 集群
@@ -110,6 +111,22 @@ bash code/run.sh code/report/build_tables.py                    # 汇总生成�
 验证均衡逻辑。
 
 ## 实验说明
+
+### 入口与口径
+
+正式实验入口与口径：
+
+- 集群对照：`server/controlled_pipeline.py`（24 TaskManager 布局）与
+  `server/resident_native_tenyear/run_resident.py`（十年常驻）
+- k-NN：`code/nearest/local_mgsi.py`（k=10）与 `experiments/knn_tpk/`（k=10）
+- 计时：1 次预热 + 5 次正式计时，报告均值 ± 样本标准差
+
+仓库中保留的历史版本（非正式入口，仅用于追溯）：
+
+- `server/run_resident.py`：早期 16 TaskManager / 48 slot 布局的常驻入口
+- `experiments/knn8_tpk/`：早期 k=8、单次计时 2–3 次的批次
+- 部分链式脚本（如 `experiments/ablation_gleam/ablation_chain.sh`、动态负载均衡的
+  对照脚本）按实验需要切换 16 TaskManager 布局，属该组实验的专用设置
 
 - 计时协议：每个实验 1 次预热 + 5 次正式计时，报告均值 ± 样本标准差；
   每次计时前清空应用层缓存，已构建的索引 / 元数据可复用；初始化与索引构建

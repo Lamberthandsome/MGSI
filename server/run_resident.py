@@ -1,4 +1,9 @@
-"""Run the real ten-year cases on one resident Flink job and verify all months."""
+"""Run the real ten-year cases on one resident Flink job and verify all months.
+
+早期 16 TaskManager / 48 slot 布局的常驻入口；正式入口为 controlled_pipeline.py
+的 24 TaskManager 布局与 resident_native_tenyear/run_resident.py，计时口径
+1 次预热 + 5 次正式计时。
+"""
 import hashlib
 import json
 import math

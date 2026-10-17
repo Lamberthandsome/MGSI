@@ -1,3 +1,4 @@
+# 早期 k=8、单次计时 2-3 次的批次入口；正式 k=10 入口见 experiments/knn_tpk/，计时口径 1 次预热 + 5 次正式计时。
 import hashlib, json, subprocess, sys, time
 from pathlib import Path
 import tpk_pipeline as p

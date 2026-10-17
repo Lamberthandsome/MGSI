@@ -1,3 +1,4 @@
+# 早期 k=8 批次的公共定义；正式 k=10 入口见 experiments/knn_tpk/。
 """Shared definitions for the temporal/point/kNN baseline batch.
 
 Query definitions and protocol:
